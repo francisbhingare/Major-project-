@@ -1,0 +1,4638 @@
+[
+  {
+    "id": "rep-1793007365658-etky",
+    "report_id": "ER-2026-919747",
+    "created_at": "2026-10-26T09:36:05.658Z",
+    "emergency_type": "Road Accident",
+    "description": "Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield",
+    "people_affected": 1,
+    "severity": "LOW",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.707119,
+      "longitude": 72.783905,
+      "accuracy": 114,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "is_demo": false,
+      "address": "Device GPS Lock (±114m accuracy)",
+      "timestamp": "2026-10-26T09:35:49.458Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Road accident",
+      "categories": [
+        "Road accident"
+      ],
+      "severity": "LOW",
+      "is_critical": false,
+      "confidence": 94,
+      "severity_score": 0,
+      "explainable_breakdown": {
+        "severity": "LOW",
+        "score": 0,
+        "reasons": [
+          "General Triage Assessment"
+        ],
+        "breakdown": []
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \"Visual Indicator: Possible person lying on roadway. Visual I...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: LOW (Score: 0 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": []
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Road accident",
+        "patient_count": 1,
+        "consciousness": "Unknown",
+        "breathing": "Unknown",
+        "visible_bleeding": null,
+        "possible_injury": null,
+        "possible_trauma": true,
+        "observed_information": [
+          "General incident telemetry recorded"
+        ],
+        "user_reported_information": [
+          "Road Accident Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+        ],
+        "ai_inference": [
+          "AI preliminary triage assessment generated"
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Trauma & Physical Injury",
+        "secondary_categories": [
+          "Road accident"
+        ],
+        "confidence_score": 0.92,
+        "confidence_level": "HIGH",
+        "severity_level": "LOW",
+        "severity_score": 25,
+        "estimated_patient_count": 1,
+        "patient_count_confidence": "MEDIUM",
+        "consciousness_status": "Unknown",
+        "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+        "breathing_status": "Unknown",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": null,
+        "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+        "suspected_physical_trauma": true,
+        "trauma_evidence": "High-energy mechanism or impact reported (physical trauma)",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          "Road Accident Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+        ],
+        "red_flags_detected": [
+          "No immediate life-threatening red flags detected"
+        ],
+        "triage_priority_score": 4,
+        "recommended_medical_specialties": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "required_hospital_capabilities": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "immediate_first_aid_steps": [
+          "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+          "Do not move patient if spinal or neck injury is suspected",
+          "Elevate legs if shock signs appear (unless spinal trauma)",
+          "Keep patient warm with blankets to prevent hypothermia"
+        ],
+        "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Patient consciousness state unverified",
+          "Airway patency and oxygenation status unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "AVPU / Glasgow Coma Scale (GCS) assessment score",
+          "Respiratory rate and SpO2 oxygen saturation percentage"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with LOW triage priority based on rule matches: [General Triage Assessment]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \"Road Accident Visual Indicator: Possible person ly...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 19.707119, 72.783905"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority LOW (Score: 0 pts). Category: Trauma & Physical Injury. Detected red flags: No immediate life-threatening red flags detected.",
+      "required_facilities": [
+        "Emergency Department",
+        "Trauma Care",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "recommended_response": "Priority triage evaluation complete. Contacting nearest emergency healthcare facilities.",
+      "immediate_safety_actions": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "next_quick_question": {
+        "id": "q_consciousness",
+        "question": "Is the person conscious and responsive?",
+        "options": [
+          "YES",
+          "NO",
+          "NOT SURE"
+        ]
+      },
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "accident_detection": {
+      "model": "LOCAL YOLOv8 / CAD Computer Vision Model",
+      "object_counts": {
+        "people": 3,
+        "vehicles": 2,
+        "smoke_fire": 0,
+        "damaged_vehicles": 1,
+        "others": 0
+      },
+      "bounding_boxes": [
+        {
+          "class": "People",
+          "label": "Unconscious Individual (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 20,
+            "y": 35,
+            "width": 30,
+            "height": 45
+          }
+        },
+        {
+          "class": "People",
+          "label": "Bystander / Victim (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 60,
+            "y": 20,
+            "width": 25,
+            "height": 50
+          }
+        },
+        {
+          "class": "Damaged Vehicle",
+          "label": "Vehicle Collision (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 15,
+            "y": 10,
+            "width": 45,
+            "height": 40
+          }
+        }
+      ],
+      "objects_summary": "3 People, 2 Vehicles, No Active Fire, Road Obstruction"
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Trauma & Physical Injury",
+      "secondary_categories": [
+        "Road accident"
+      ],
+      "confidence_score": 0.92,
+      "confidence_level": "HIGH",
+      "severity_level": "LOW",
+      "severity_score": 25,
+      "estimated_patient_count": 1,
+      "patient_count_confidence": "MEDIUM",
+      "consciousness_status": "Unknown",
+      "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+      "breathing_status": "Unknown",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": null,
+      "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+      "suspected_physical_trauma": true,
+      "trauma_evidence": "High-energy mechanism or impact reported (physical trauma)",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        "Road Accident Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+      ],
+      "red_flags_detected": [
+        "No immediate life-threatening red flags detected"
+      ],
+      "triage_priority_score": 4,
+      "recommended_medical_specialties": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "required_hospital_capabilities": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "immediate_first_aid_steps": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Patient consciousness state unverified",
+        "Airway patency and oxygenation status unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "AVPU / Glasgow Coma Scale (GCS) assessment score",
+        "Respiratory rate and SpO2 oxygen saturation percentage"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with LOW triage priority based on rule matches: [General Triage Assessment]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \"Road Accident Visual Indicator: Possible person ly...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 19.707119, 72.783905"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-26T09:36:05.658Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-26T09:36:05.658Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-26T09:36:05.658Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792997766553-61e2",
+    "report_id": "ER-2026-463779",
+    "created_at": "2026-10-26T06:56:06.553Z",
+    "emergency_type": "Road Accident",
+    "description": "Genuine GPS telemetry test",
+    "people_affected": 1,
+    "severity": "HIGH",
+    "ai_confidence": 90,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "accuracy": 12,
+      "quality": "HIGH",
+      "source": "DEVICE_GPS",
+      "is_demo": false,
+      "address": "Bandra West, Mumbai",
+      "timestamp": "2026-10-26T06:56:06.553Z"
+    },
+    "media_urls": [],
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-26T06:56:06.553Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-26T06:56:06.553Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-26T06:56:06.553Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792997723300-xepv",
+    "report_id": "ER-2026-816545",
+    "created_at": "2026-10-26T06:55:23.300Z",
+    "emergency_type": "Trauma Injury",
+    "description": "Stage 2 Persistence Test Incident - verifying disk sync and identifier consistency",
+    "people_affected": 2,
+    "severity": "HIGH",
+    "ai_confidence": 90,
+    "status": "ACKNOWLEDGED",
+    "location": {
+      "latitude": 18.5204,
+      "longitude": 73.8567,
+      "accuracy": 10,
+      "quality": "LOW",
+      "source": "DEMO",
+      "is_demo": true,
+      "address": "Pune Test Point",
+      "timestamp": "2026-10-26T06:55:23.300Z"
+    },
+    "media_urls": [],
+    "recommended_hospital_id": "hosp-001",
+    "recommended_hospital": {
+      "id": "hosp-001",
+      "name": "Apex Trauma & Critical Care Center (DEMO HOSPITAL)",
+      "address": "Sector 14, Main Medical Expressway, Metro City",
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "phone": "+1 (800) 555-0199",
+      "emergency_email": "er-trauma@apexhospital-demo.org",
+      "is_demo": true,
+      "capabilities": {
+        "has_emergency_department": true,
+        "has_icu": true,
+        "has_trauma_center": true,
+        "has_blood_bank": true,
+        "has_cardiology": true,
+        "has_neurology": true,
+        "has_orthopedics": true,
+        "has_burn_unit": true,
+        "has_ambulance": true,
+        "has_operation_theatre": true,
+        "is_emergency_available": true
+      },
+      "source": "DEMO_DATA",
+      "verification_status": "VERIFIED",
+      "distanceKm": 120.2,
+      "suitabilityScore": 25,
+      "matchReasons": [
+        "Demonstration Hospital Profile (Simulated Benchmark)",
+        "120.2 km straight-line distance (as-the-crow-flies)"
+      ],
+      "recommendationNote": "[DEMO FACILITY] Pre-configured benchmark facility (120.2 km straight-line). Used for evaluation only."
+    },
+    "nearby_hospitals": [
+      {
+        "id": "hosp-001",
+        "name": "Apex Trauma & Critical Care Center (DEMO HOSPITAL)",
+        "address": "Sector 14, Main Medical Expressway, Metro City",
+        "latitude": 19.076,
+        "longitude": 72.8777,
+        "phone": "+1 (800) 555-0199",
+        "emergency_email": "er-trauma@apexhospital-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": true,
+          "has_blood_bank": true,
+          "has_cardiology": true,
+          "has_neurology": true,
+          "has_orthopedics": true,
+          "has_burn_unit": true,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "source": "DEMO_DATA",
+        "verification_status": "VERIFIED",
+        "distanceKm": 120.2,
+        "suitabilityScore": 25,
+        "matchReasons": [
+          "Demonstration Hospital Profile (Simulated Benchmark)",
+          "120.2 km straight-line distance (as-the-crow-flies)"
+        ],
+        "recommendationNote": "[DEMO FACILITY] Pre-configured benchmark facility (120.2 km straight-line). Used for evaluation only."
+      },
+      {
+        "id": "hosp-002",
+        "name": "CityCare General Hospital (DEMO HOSPITAL)",
+        "address": "45 Health Avenue, Central District",
+        "latitude": 19.088,
+        "longitude": 72.889,
+        "phone": "+1 (800) 555-0144",
+        "emergency_email": "emergency@citycare-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": false,
+          "has_blood_bank": true,
+          "has_cardiology": true,
+          "has_neurology": false,
+          "has_orthopedics": true,
+          "has_burn_unit": false,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "source": "DEMO_DATA",
+        "verification_status": "VERIFIED",
+        "distanceKm": 119.8,
+        "suitabilityScore": 25,
+        "matchReasons": [
+          "Demonstration Hospital Profile (Simulated Benchmark)",
+          "119.8 km straight-line distance (as-the-crow-flies)"
+        ],
+        "recommendationNote": "[DEMO FACILITY] Pre-configured benchmark facility (119.8 km straight-line). Used for evaluation only."
+      },
+      {
+        "id": "hosp-003",
+        "name": "St. Jude Heart & Vascular Institute (DEMO HOSPITAL)",
+        "address": "102 Cardiac Way, North Ridge",
+        "latitude": 19.062,
+        "longitude": 72.861,
+        "phone": "+1 (800) 555-0188",
+        "emergency_email": "cardiac-er@stjude-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": false,
+          "has_blood_bank": true,
+          "has_cardiology": true,
+          "has_neurology": true,
+          "has_orthopedics": false,
+          "has_burn_unit": false,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "source": "DEMO_DATA",
+        "verification_status": "VERIFIED",
+        "distanceKm": 120.9,
+        "suitabilityScore": 25,
+        "matchReasons": [
+          "Demonstration Hospital Profile (Simulated Benchmark)",
+          "120.9 km straight-line distance (as-the-crow-flies)"
+        ],
+        "recommendationNote": "[DEMO FACILITY] Pre-configured benchmark facility (120.9 km straight-line). Used for evaluation only."
+      },
+      {
+        "id": "hosp-004",
+        "name": "Metro Burn & Specialized Injury Clinic (DEMO HOSPITAL)",
+        "address": "88 Recovery Boulevard, East Side",
+        "latitude": 19.095,
+        "longitude": 72.85,
+        "phone": "+1 (800) 555-0177",
+        "emergency_email": "burnunit@metrocare-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": false,
+          "has_blood_bank": true,
+          "has_cardiology": false,
+          "has_neurology": false,
+          "has_orthopedics": false,
+          "has_burn_unit": true,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "source": "DEMO_DATA",
+        "verification_status": "VERIFIED",
+        "distanceKm": 123.7,
+        "suitabilityScore": 25,
+        "matchReasons": [
+          "Demonstration Hospital Profile (Simulated Benchmark)",
+          "123.7 km straight-line distance (as-the-crow-flies)"
+        ],
+        "recommendationNote": "[DEMO FACILITY] Pre-configured benchmark facility (123.7 km straight-line). Used for evaluation only."
+      },
+      {
+        "id": "hosp-005",
+        "name": "GreenValley Community Hospital (DEMO HOSPITAL)",
+        "address": "12 Suburban Road, West Suburbs",
+        "latitude": 19.04,
+        "longitude": 72.9,
+        "phone": "+1 (800) 555-0122",
+        "emergency_email": "er@greenvalley-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": false,
+          "has_trauma_center": false,
+          "has_blood_bank": false,
+          "has_cardiology": false,
+          "has_neurology": false,
+          "has_orthopedics": true,
+          "has_burn_unit": false,
+          "has_ambulance": true,
+          "has_operation_theatre": false,
+          "is_emergency_available": true
+        },
+        "source": "DEMO_DATA",
+        "verification_status": "VERIFIED",
+        "distanceKm": 116.1,
+        "suitabilityScore": 25,
+        "matchReasons": [
+          "Demonstration Hospital Profile (Simulated Benchmark)",
+          "116.1 km straight-line distance (as-the-crow-flies)"
+        ],
+        "recommendationNote": "[DEMO FACILITY] Pre-configured benchmark facility (116.1 km straight-line). Used for evaluation only."
+      }
+    ],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-26T06:55:23.300Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-26T06:55:23.300Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Matched Apex Trauma & Critical Care Center (DEMO HOSPITAL) (120.2 km straight-line distance)",
+        "timestamp": "2026-10-26T06:55:23.300Z"
+      },
+      {
+        "status": "ACKNOWLEDGED",
+        "label": "Hospital responder acknowledged emergency via radio dispatch",
+        "timestamp": "2026-10-26T06:55:25.835Z"
+      }
+    ],
+    "is_demo": true
+  },
+  {
+    "id": "rep-1792996748833-6814",
+    "report_id": "ER-2026-109699",
+    "created_at": "2026-10-26T06:39:08.833Z",
+    "emergency_type": "Road Accident",
+    "description": "Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield",
+    "people_affected": 1,
+    "severity": "LOW",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 18.5344,
+      "longitude": 73.883,
+      "accuracy": 100000,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "is_demo": false,
+      "address": "Device GPS Lock (±100000m accuracy)",
+      "timestamp": "2026-10-26T06:37:43.603Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Road accident",
+      "categories": [
+        "Road accident"
+      ],
+      "severity": "LOW",
+      "is_critical": false,
+      "confidence": 94,
+      "severity_score": 0,
+      "explainable_breakdown": {
+        "severity": "LOW",
+        "score": 0,
+        "reasons": [
+          "General Triage Assessment"
+        ],
+        "breakdown": []
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \"Visual Indicator: Possible person lying on roadway. Visual I...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: LOW (Score: 0 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": []
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Road accident",
+        "patient_count": 1,
+        "consciousness": "Unknown",
+        "breathing": "Unknown",
+        "visible_bleeding": null,
+        "possible_injury": null,
+        "possible_trauma": true,
+        "observed_information": [
+          "General incident telemetry recorded"
+        ],
+        "user_reported_information": [
+          "Road Accident Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+        ],
+        "ai_inference": [
+          "AI preliminary triage assessment generated"
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Trauma & Physical Injury",
+        "secondary_categories": [
+          "Road accident"
+        ],
+        "confidence_score": 0.92,
+        "confidence_level": "HIGH",
+        "severity_level": "LOW",
+        "severity_score": 25,
+        "estimated_patient_count": 1,
+        "patient_count_confidence": "MEDIUM",
+        "consciousness_status": "Unknown",
+        "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+        "breathing_status": "Unknown",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": null,
+        "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+        "suspected_physical_trauma": true,
+        "trauma_evidence": "High-energy mechanism or impact reported (physical trauma)",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          "Road Accident Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+        ],
+        "red_flags_detected": [
+          "No immediate life-threatening red flags detected"
+        ],
+        "triage_priority_score": 4,
+        "recommended_medical_specialties": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "required_hospital_capabilities": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "immediate_first_aid_steps": [
+          "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+          "Do not move patient if spinal or neck injury is suspected",
+          "Elevate legs if shock signs appear (unless spinal trauma)",
+          "Keep patient warm with blankets to prevent hypothermia"
+        ],
+        "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Patient consciousness state unverified",
+          "Airway patency and oxygenation status unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "AVPU / Glasgow Coma Scale (GCS) assessment score",
+          "Respiratory rate and SpO2 oxygen saturation percentage"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with LOW triage priority based on rule matches: [General Triage Assessment]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \"Road Accident Visual Indicator: Possible person ly...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 18.5344, 73.883"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority LOW (Score: 0 pts). Category: Trauma & Physical Injury. Detected red flags: No immediate life-threatening red flags detected.",
+      "required_facilities": [
+        "Emergency Department",
+        "Trauma Care",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "recommended_response": "Priority triage evaluation complete. Contacting nearest emergency healthcare facilities.",
+      "immediate_safety_actions": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "next_quick_question": {
+        "id": "q_consciousness",
+        "question": "Is the person conscious and responsive?",
+        "options": [
+          "YES",
+          "NO",
+          "NOT SURE"
+        ]
+      },
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "accident_detection": {
+      "model": "LOCAL YOLOv8 / CAD Computer Vision Model",
+      "object_counts": {
+        "people": 3,
+        "vehicles": 2,
+        "smoke_fire": 0,
+        "damaged_vehicles": 1,
+        "others": 0
+      },
+      "bounding_boxes": [
+        {
+          "class": "People",
+          "label": "Unconscious Individual (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 20,
+            "y": 35,
+            "width": 30,
+            "height": 45
+          }
+        },
+        {
+          "class": "People",
+          "label": "Bystander / Victim (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 60,
+            "y": 20,
+            "width": 25,
+            "height": 50
+          }
+        },
+        {
+          "class": "Damaged Vehicle",
+          "label": "Vehicle Collision (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 15,
+            "y": 10,
+            "width": 45,
+            "height": 40
+          }
+        }
+      ],
+      "objects_summary": "3 People, 2 Vehicles, No Active Fire, Road Obstruction"
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Trauma & Physical Injury",
+      "secondary_categories": [
+        "Road accident"
+      ],
+      "confidence_score": 0.92,
+      "confidence_level": "HIGH",
+      "severity_level": "LOW",
+      "severity_score": 25,
+      "estimated_patient_count": 1,
+      "patient_count_confidence": "MEDIUM",
+      "consciousness_status": "Unknown",
+      "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+      "breathing_status": "Unknown",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": null,
+      "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+      "suspected_physical_trauma": true,
+      "trauma_evidence": "High-energy mechanism or impact reported (physical trauma)",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        "Road Accident Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+      ],
+      "red_flags_detected": [
+        "No immediate life-threatening red flags detected"
+      ],
+      "triage_priority_score": 4,
+      "recommended_medical_specialties": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "required_hospital_capabilities": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "immediate_first_aid_steps": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Patient consciousness state unverified",
+        "Airway patency and oxygenation status unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "AVPU / Glasgow Coma Scale (GCS) assessment score",
+        "Respiratory rate and SpO2 oxygen saturation percentage"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with LOW triage priority based on rule matches: [General Triage Assessment]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \"Road Accident Visual Indicator: Possible person ly...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 18.5344, 73.883"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-26T06:39:08.833Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-26T06:39:08.833Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-26T06:39:08.833Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792996122797-7tja",
+    "report_id": "ER-2026-660875",
+    "created_at": "2026-10-26T06:28:42.797Z",
+    "emergency_type": "Road Accident",
+    "description": "Genuine GPS telemetry test",
+    "people_affected": 1,
+    "severity": "HIGH",
+    "ai_confidence": 90,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "accuracy": 12,
+      "quality": "HIGH",
+      "source": "DEVICE_GPS",
+      "is_demo": false,
+      "address": "Bandra West, Mumbai",
+      "timestamp": "2026-10-26T06:28:42.797Z"
+    },
+    "media_urls": [],
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-26T06:28:42.797Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-26T06:28:42.797Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-26T06:28:42.797Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792996034525-vh8z",
+    "report_id": "ER-2026-368994",
+    "created_at": "2026-10-26T06:27:14.525Z",
+    "emergency_type": "Road Accident",
+    "description": "Genuine GPS telemetry test",
+    "people_affected": 1,
+    "severity": "HIGH",
+    "ai_confidence": 90,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "accuracy": 12,
+      "quality": "HIGH",
+      "source": "DEVICE_GPS",
+      "is_demo": false,
+      "address": "Bandra West, Mumbai",
+      "timestamp": "2026-10-26T06:27:14.525Z"
+    },
+    "media_urls": [],
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-26T06:27:14.525Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-26T06:27:14.525Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-26T06:27:14.525Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792994634155-la0w",
+    "report_id": "ER-2026-577461",
+    "created_at": "2026-10-26T06:03:54.156Z",
+    "emergency_type": "Road Accident",
+    "description": "A road accident has happend in the following picture . Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield",
+    "people_affected": 1,
+    "severity": "LOW",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.706304,
+      "longitude": 72.783113,
+      "accuracy": 149,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "address": "GPS Locked (±149m accuracy)",
+      "timestamp": "2026-10-26T06:00:40.011Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Road accident",
+      "categories": [
+        "Road accident"
+      ],
+      "severity": "LOW",
+      "is_critical": false,
+      "confidence": 94,
+      "severity_score": 0,
+      "explainable_breakdown": {
+        "severity": "LOW",
+        "score": 0,
+        "reasons": [
+          "General Triage Assessment"
+        ],
+        "breakdown": []
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \"A road accident has happend in the following picture . Visua...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: LOW (Score: 0 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": []
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Road accident",
+        "patient_count": 1,
+        "consciousness": "Unknown",
+        "breathing": "Unknown",
+        "visible_bleeding": null,
+        "possible_injury": null,
+        "possible_trauma": true,
+        "observed_information": [
+          "General incident telemetry recorded"
+        ],
+        "user_reported_information": [
+          "Road Accident A road accident has happend in the following picture . Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+        ],
+        "ai_inference": [
+          "AI preliminary triage assessment generated"
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Trauma & Physical Injury",
+        "secondary_categories": [
+          "Road accident"
+        ],
+        "confidence_score": 0.92,
+        "confidence_level": "HIGH",
+        "severity_level": "LOW",
+        "severity_score": 25,
+        "estimated_patient_count": 1,
+        "patient_count_confidence": "MEDIUM",
+        "consciousness_status": "Unknown",
+        "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+        "breathing_status": "Unknown",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": null,
+        "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+        "suspected_physical_trauma": true,
+        "trauma_evidence": "High-energy mechanism or impact reported (physical trauma)",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          "Road Accident A road accident has happend in the following picture . Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+        ],
+        "red_flags_detected": [
+          "No immediate life-threatening red flags detected"
+        ],
+        "triage_priority_score": 4,
+        "recommended_medical_specialties": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "required_hospital_capabilities": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "immediate_first_aid_steps": [
+          "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+          "Do not move patient if spinal or neck injury is suspected",
+          "Elevate legs if shock signs appear (unless spinal trauma)",
+          "Keep patient warm with blankets to prevent hypothermia"
+        ],
+        "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Patient consciousness state unverified",
+          "Airway patency and oxygenation status unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "AVPU / Glasgow Coma Scale (GCS) assessment score",
+          "Respiratory rate and SpO2 oxygen saturation percentage"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with LOW triage priority based on rule matches: [General Triage Assessment]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \"Road Accident A road accident has happend in the f...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 19.706304, 72.783113"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority LOW (Score: 0 pts). Category: Trauma & Physical Injury. Detected red flags: No immediate life-threatening red flags detected.",
+      "required_facilities": [
+        "Emergency Department",
+        "Trauma Care",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "recommended_response": "Priority triage evaluation complete. Contacting nearest emergency healthcare facilities.",
+      "immediate_safety_actions": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "next_quick_question": {
+        "id": "q_consciousness",
+        "question": "Is the person conscious and responsive?",
+        "options": [
+          "YES",
+          "NO",
+          "NOT SURE"
+        ]
+      },
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "accident_detection": {
+      "model": "LOCAL YOLOv8 / CAD Computer Vision Model",
+      "object_counts": {
+        "people": 3,
+        "vehicles": 2,
+        "smoke_fire": 0,
+        "damaged_vehicles": 1,
+        "others": 0
+      },
+      "bounding_boxes": [
+        {
+          "class": "People",
+          "label": "Unconscious Individual (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 20,
+            "y": 35,
+            "width": 30,
+            "height": 45
+          }
+        },
+        {
+          "class": "People",
+          "label": "Bystander / Victim (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 60,
+            "y": 20,
+            "width": 25,
+            "height": 50
+          }
+        },
+        {
+          "class": "Damaged Vehicle",
+          "label": "Vehicle Collision (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 15,
+            "y": 10,
+            "width": 45,
+            "height": 40
+          }
+        }
+      ],
+      "objects_summary": "3 People, 2 Vehicles, No Active Fire, Road Obstruction"
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Trauma & Physical Injury",
+      "secondary_categories": [
+        "Road accident"
+      ],
+      "confidence_score": 0.92,
+      "confidence_level": "HIGH",
+      "severity_level": "LOW",
+      "severity_score": 25,
+      "estimated_patient_count": 1,
+      "patient_count_confidence": "MEDIUM",
+      "consciousness_status": "Unknown",
+      "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+      "breathing_status": "Unknown",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": null,
+      "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+      "suspected_physical_trauma": true,
+      "trauma_evidence": "High-energy mechanism or impact reported (physical trauma)",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        "Road Accident A road accident has happend in the following picture . Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+      ],
+      "red_flags_detected": [
+        "No immediate life-threatening red flags detected"
+      ],
+      "triage_priority_score": 4,
+      "recommended_medical_specialties": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "required_hospital_capabilities": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "immediate_first_aid_steps": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Patient consciousness state unverified",
+        "Airway patency and oxygenation status unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "AVPU / Glasgow Coma Scale (GCS) assessment score",
+        "Respiratory rate and SpO2 oxygen saturation percentage"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with LOW triage priority based on rule matches: [General Triage Assessment]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \"Road Accident A road accident has happend in the f...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 19.706304, 72.783113"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "recommended_hospital_id": "hosp-001",
+    "recommended_hospital": {
+      "id": "hosp-001",
+      "name": "Apex Trauma & Critical Care Center (DEMO HOSPITAL)",
+      "address": "Sector 14, Main Medical Expressway, Metro City",
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "phone": "+1 (800) 555-0199",
+      "emergency_email": "er-trauma@apexhospital-demo.org",
+      "is_demo": true,
+      "capabilities": {
+        "has_emergency_department": true,
+        "has_icu": true,
+        "has_trauma_center": true,
+        "has_blood_bank": true,
+        "has_cardiology": true,
+        "has_neurology": true,
+        "has_orthopedics": true,
+        "has_burn_unit": true,
+        "has_ambulance": true,
+        "has_operation_theatre": true,
+        "is_emergency_available": true
+      },
+      "distanceKm": 70.8,
+      "suitabilityScore": 10,
+      "matchReasons": [
+        "Capability details subject to on-scene verification",
+        "70.8 km straight-line distance"
+      ],
+      "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (70.8 km)."
+    },
+    "nearby_hospitals": [
+      {
+        "id": "hosp-001",
+        "name": "Apex Trauma & Critical Care Center (DEMO HOSPITAL)",
+        "address": "Sector 14, Main Medical Expressway, Metro City",
+        "latitude": 19.076,
+        "longitude": 72.8777,
+        "phone": "+1 (800) 555-0199",
+        "emergency_email": "er-trauma@apexhospital-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": true,
+          "has_blood_bank": true,
+          "has_cardiology": true,
+          "has_neurology": true,
+          "has_orthopedics": true,
+          "has_burn_unit": true,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "distanceKm": 70.8,
+        "suitabilityScore": 10,
+        "matchReasons": [
+          "Capability details subject to on-scene verification",
+          "70.8 km straight-line distance"
+        ],
+        "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (70.8 km)."
+      },
+      {
+        "id": "hosp-002",
+        "name": "CityCare General Hospital (DEMO HOSPITAL)",
+        "address": "45 Health Avenue, Central District",
+        "latitude": 19.088,
+        "longitude": 72.889,
+        "phone": "+1 (800) 555-0144",
+        "emergency_email": "emergency@citycare-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": false,
+          "has_blood_bank": true,
+          "has_cardiology": true,
+          "has_neurology": false,
+          "has_orthopedics": true,
+          "has_burn_unit": false,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "distanceKm": 69.6,
+        "suitabilityScore": 10,
+        "matchReasons": [
+          "Capability details subject to on-scene verification",
+          "69.6 km straight-line distance"
+        ],
+        "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (69.6 km)."
+      },
+      {
+        "id": "hosp-003",
+        "name": "St. Jude Heart & Vascular Institute (DEMO HOSPITAL)",
+        "address": "102 Cardiac Way, North Ridge",
+        "latitude": 19.062,
+        "longitude": 72.861,
+        "phone": "+1 (800) 555-0188",
+        "emergency_email": "cardiac-er@stjude-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": false,
+          "has_blood_bank": true,
+          "has_cardiology": true,
+          "has_neurology": true,
+          "has_orthopedics": false,
+          "has_burn_unit": false,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "distanceKm": 72.1,
+        "suitabilityScore": 10,
+        "matchReasons": [
+          "Capability details subject to on-scene verification",
+          "72.1 km straight-line distance"
+        ],
+        "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (72.1 km)."
+      },
+      {
+        "id": "hosp-004",
+        "name": "Metro Burn & Specialized Injury Clinic (DEMO HOSPITAL)",
+        "address": "88 Recovery Boulevard, East Side",
+        "latitude": 19.095,
+        "longitude": 72.85,
+        "phone": "+1 (800) 555-0177",
+        "emergency_email": "burnunit@metrocare-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": false,
+          "has_blood_bank": true,
+          "has_cardiology": false,
+          "has_neurology": false,
+          "has_orthopedics": false,
+          "has_burn_unit": true,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "distanceKm": 68.3,
+        "suitabilityScore": 10,
+        "matchReasons": [
+          "Capability details subject to on-scene verification",
+          "68.3 km straight-line distance"
+        ],
+        "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (68.3 km)."
+      },
+      {
+        "id": "hosp-005",
+        "name": "GreenValley Community Hospital (DEMO HOSPITAL)",
+        "address": "12 Suburban Road, West Suburbs",
+        "latitude": 19.04,
+        "longitude": 72.9,
+        "phone": "+1 (800) 555-0122",
+        "emergency_email": "er@greenvalley-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": false,
+          "has_trauma_center": false,
+          "has_blood_bank": false,
+          "has_cardiology": false,
+          "has_neurology": false,
+          "has_orthopedics": true,
+          "has_burn_unit": false,
+          "has_ambulance": true,
+          "has_operation_theatre": false,
+          "is_emergency_available": true
+        },
+        "distanceKm": 75.1,
+        "suitabilityScore": 10,
+        "matchReasons": [
+          "Capability details subject to on-scene verification",
+          "75.1 km straight-line distance"
+        ],
+        "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (75.1 km)."
+      }
+    ],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-26T06:03:54.156Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-26T06:03:54.156Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Matched Apex Trauma & Critical Care Center (DEMO HOSPITAL) (70.8 km)",
+        "timestamp": "2026-10-26T06:03:54.156Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792994318374-fvt4",
+    "report_id": "ER-2026-467016",
+    "created_at": "2026-10-26T05:58:38.374Z",
+    "emergency_type": "Road Accident",
+    "description": "End-to-end integration test with hospital matching",
+    "people_affected": 2,
+    "severity": "CRITICAL",
+    "ai_confidence": 96,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.076,
+      "longitude": 72.877,
+      "accuracy": 15,
+      "quality": "HIGH",
+      "source": "DEVICE_GPS",
+      "address": "Bandra Reclamation, Mumbai",
+      "timestamp": "2026-10-26T05:58:38.374Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "severity": "CRITICAL",
+      "confidence": 96,
+      "is_critical": true,
+      "severity_score": 18
+    },
+    "recommended_hospital_id": "hosp-001",
+    "recommended_hospital": {
+      "id": "hosp-001",
+      "name": "Apex Trauma & Critical Care Center (DEMO HOSPITAL)",
+      "address": "Sector 14, Main Medical Expressway, Metro City",
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "phone": "+1 (800) 555-0199",
+      "emergency_email": "er-trauma@apexhospital-demo.org",
+      "is_demo": true,
+      "capabilities": {
+        "has_emergency_department": true,
+        "has_icu": true,
+        "has_trauma_center": true,
+        "has_blood_bank": true,
+        "has_cardiology": true,
+        "has_neurology": true,
+        "has_orthopedics": true,
+        "has_burn_unit": true,
+        "has_ambulance": true,
+        "has_operation_theatre": true,
+        "is_emergency_available": true
+      },
+      "distanceKm": 0.1,
+      "suitabilityScore": 50,
+      "matchReasons": [
+        "Capability details subject to on-scene verification",
+        "0.1 km straight-line distance"
+      ],
+      "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (0.1 km)."
+    },
+    "nearby_hospitals": [
+      {
+        "id": "hosp-001",
+        "name": "Apex Trauma & Critical Care Center (DEMO HOSPITAL)",
+        "address": "Sector 14, Main Medical Expressway, Metro City",
+        "latitude": 19.076,
+        "longitude": 72.8777,
+        "phone": "+1 (800) 555-0199",
+        "emergency_email": "er-trauma@apexhospital-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": true,
+          "has_blood_bank": true,
+          "has_cardiology": true,
+          "has_neurology": true,
+          "has_orthopedics": true,
+          "has_burn_unit": true,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "distanceKm": 0.1,
+        "suitabilityScore": 50,
+        "matchReasons": [
+          "Capability details subject to on-scene verification",
+          "0.1 km straight-line distance"
+        ],
+        "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (0.1 km)."
+      },
+      {
+        "id": "hosp-002",
+        "name": "CityCare General Hospital (DEMO HOSPITAL)",
+        "address": "45 Health Avenue, Central District",
+        "latitude": 19.088,
+        "longitude": 72.889,
+        "phone": "+1 (800) 555-0144",
+        "emergency_email": "emergency@citycare-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": false,
+          "has_blood_bank": true,
+          "has_cardiology": true,
+          "has_neurology": false,
+          "has_orthopedics": true,
+          "has_burn_unit": false,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "distanceKm": 1.8,
+        "suitabilityScore": 45,
+        "matchReasons": [
+          "Capability details subject to on-scene verification",
+          "1.8 km straight-line distance"
+        ],
+        "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (1.8 km)."
+      },
+      {
+        "id": "hosp-003",
+        "name": "St. Jude Heart & Vascular Institute (DEMO HOSPITAL)",
+        "address": "102 Cardiac Way, North Ridge",
+        "latitude": 19.062,
+        "longitude": 72.861,
+        "phone": "+1 (800) 555-0188",
+        "emergency_email": "cardiac-er@stjude-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": false,
+          "has_blood_bank": true,
+          "has_cardiology": true,
+          "has_neurology": true,
+          "has_orthopedics": false,
+          "has_burn_unit": false,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "distanceKm": 2.3,
+        "suitabilityScore": 43,
+        "matchReasons": [
+          "Capability details subject to on-scene verification",
+          "2.3 km straight-line distance"
+        ],
+        "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (2.3 km)."
+      },
+      {
+        "id": "hosp-004",
+        "name": "Metro Burn & Specialized Injury Clinic (DEMO HOSPITAL)",
+        "address": "88 Recovery Boulevard, East Side",
+        "latitude": 19.095,
+        "longitude": 72.85,
+        "phone": "+1 (800) 555-0177",
+        "emergency_email": "burnunit@metrocare-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": true,
+          "has_trauma_center": false,
+          "has_blood_bank": true,
+          "has_cardiology": false,
+          "has_neurology": false,
+          "has_orthopedics": false,
+          "has_burn_unit": true,
+          "has_ambulance": true,
+          "has_operation_theatre": true,
+          "is_emergency_available": true
+        },
+        "distanceKm": 3.5,
+        "suitabilityScore": 40,
+        "matchReasons": [
+          "Capability details subject to on-scene verification",
+          "3.5 km straight-line distance"
+        ],
+        "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (3.5 km)."
+      },
+      {
+        "id": "hosp-005",
+        "name": "GreenValley Community Hospital (DEMO HOSPITAL)",
+        "address": "12 Suburban Road, West Suburbs",
+        "latitude": 19.04,
+        "longitude": 72.9,
+        "phone": "+1 (800) 555-0122",
+        "emergency_email": "er@greenvalley-demo.org",
+        "is_demo": true,
+        "capabilities": {
+          "has_emergency_department": true,
+          "has_icu": false,
+          "has_trauma_center": false,
+          "has_blood_bank": false,
+          "has_cardiology": false,
+          "has_neurology": false,
+          "has_orthopedics": true,
+          "has_burn_unit": false,
+          "has_ambulance": true,
+          "has_operation_theatre": false,
+          "is_emergency_available": true
+        },
+        "distanceKm": 4.7,
+        "suitabilityScore": 36,
+        "matchReasons": [
+          "Capability details subject to on-scene verification",
+          "4.7 km straight-line distance"
+        ],
+        "recommendationNote": "Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (4.7 km)."
+      }
+    ],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-26T05:58:38.374Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-26T05:58:38.374Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Matched Apex Trauma & Critical Care Center (DEMO HOSPITAL) (0.1 km)",
+        "timestamp": "2026-10-26T05:58:38.374Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792994088483-2vzb",
+    "report_id": "ER-2026-759242",
+    "created_at": "2026-10-26T05:54:48.483Z",
+    "emergency_type": "Road Accident",
+    "description": "End-to-end integration test incident",
+    "people_affected": 2,
+    "severity": "CRITICAL",
+    "ai_confidence": 96,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.076,
+      "longitude": 72.877,
+      "accuracy": 15,
+      "quality": "HIGH",
+      "source": "DEVICE_GPS",
+      "address": "Bandra Reclamation, Mumbai",
+      "timestamp": "2026-10-26T05:54:48.483Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "severity": "CRITICAL",
+      "confidence": 96,
+      "is_critical": true,
+      "severity_score": 18
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-26T05:54:48.483Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-26T05:54:48.483Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-26T05:54:48.483Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "test-sync-1",
+    "emergency_type": "Test Sync",
+    "description": "Testing offline sync handler",
+    "people_affected": 1,
+    "severity": "LOW",
+    "priority": 4,
+    "location": {
+      "latitude": 19.07,
+      "longitude": 72.87,
+      "address": "Test Lab"
+    },
+    "status": "REPORTED",
+    "created_at": "2026-10-26T05:53:51.671Z"
+  },
+  {
+    "id": "rep-1792952194014-9qzu",
+    "report_id": "ER-2026-870235",
+    "created_at": "2026-10-25T18:16:34.014Z",
+    "emergency_type": "Road Accident",
+    "description": "Highway multi-vehicle collision. Driver unconscious, severe bleeding from forehead, broken windshield.",
+    "people_affected": 2,
+    "severity": "CRITICAL",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.706825,
+      "longitude": 72.782928,
+      "accuracy": 212,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "address": "GPS Locked (±212m accuracy)",
+      "timestamp": "2026-10-25T18:15:18.283Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Road accident",
+      "categories": [
+        "Road accident",
+        "Severe bleeding",
+        "Head injury",
+        "Fracture/major trauma",
+        "Unconscious person"
+      ],
+      "severity": "CRITICAL",
+      "is_critical": true,
+      "confidence": 94,
+      "severity_score": 16,
+      "explainable_breakdown": {
+        "severity": "CRITICAL",
+        "score": 16,
+        "reasons": [
+          "Unconscious Patient",
+          "Severe Active Hemorrhage",
+          "High-Impact Vehicle Collision",
+          "Multiple Victims (2 affected)"
+        ],
+        "breakdown": [
+          {
+            "factor": "Unconscious Patient",
+            "points": 5
+          },
+          {
+            "factor": "Severe Active Hemorrhage",
+            "points": 5
+          },
+          {
+            "factor": "High-Impact Vehicle Collision",
+            "points": 3
+          },
+          {
+            "factor": "Multiple Victims (2 affected)",
+            "points": 3
+          }
+        ]
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \"Highway multi-vehicle collision. Driver unconscious, severe ...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: CRITICAL (Score: 13 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": [
+              {
+                "factor": "Unconscious Patient",
+                "points": 5
+              },
+              {
+                "factor": "Severe Active Hemorrhage",
+                "points": 5
+              },
+              {
+                "factor": "High-Impact Vehicle Collision",
+                "points": 3
+              }
+            ]
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Road accident + Severe bleeding + Head injury + Fracture/major trauma + Unconscious person",
+        "patient_count": 2,
+        "consciousness": "Unconscious",
+        "breathing": "Unknown",
+        "visible_bleeding": true,
+        "possible_injury": "Head injury indicator",
+        "possible_trauma": true,
+        "observed_information": [
+          "Active hemorrhage reported/observed",
+          "Patient reported unresponsive"
+        ],
+        "user_reported_information": [
+          "Road Accident Highway multi-vehicle collision. Driver unconscious, severe bleeding from forehead, broken windshield."
+        ],
+        "ai_inference": [
+          "Possible severe traumatic brain or cervical injury based on unconsciousness post-impact.",
+          "Active blood loss requiring trauma hemorrhage control readiness."
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Trauma & Physical Injury",
+        "secondary_categories": [
+          "Road accident",
+          "Severe bleeding",
+          "Head injury",
+          "Fracture/major trauma",
+          "Unconscious person"
+        ],
+        "confidence_score": 0.92,
+        "confidence_level": "HIGH",
+        "severity_level": "CRITICAL",
+        "severity_score": 100,
+        "estimated_patient_count": 2,
+        "patient_count_confidence": "HIGH",
+        "consciousness_status": "Unconscious",
+        "consciousness_evidence": "Report/input mentions unconscious, unresponsive, or passed out",
+        "breathing_status": "Unknown",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": true,
+        "hemorrhage_evidence": "Active bleeding reported or detected in scene telemetry",
+        "suspected_physical_trauma": true,
+        "trauma_evidence": "High-energy mechanism or impact reported (Head injury indicator)",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          "Road Accident Highway multi-vehicle collision. Driver unconscious, severe bleeding from forehead, broken windshield."
+        ],
+        "red_flags_detected": [
+          "Uncontrolled severe arterial bleeding"
+        ],
+        "triage_priority_score": 1,
+        "recommended_medical_specialties": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "required_hospital_capabilities": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "immediate_first_aid_steps": [
+          "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+          "Do not move patient if spinal or neck injury is suspected",
+          "Elevate legs if shock signs appear (unless spinal trauma)",
+          "Keep patient warm with blankets to prevent hypothermia"
+        ],
+        "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Airway patency and oxygenation status unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "Respiratory rate and SpO2 oxygen saturation percentage"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with CRITICAL triage priority based on rule matches: [Unconscious Patient; Severe Active Hemorrhage; High-Impact Vehicle Collision; Multiple Victims (2 affected)]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \"Road Accident Highway multi-vehicle collision. Dri...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 19.706825, 72.782928"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority CRITICAL (Score: 16 pts). Category: Trauma & Physical Injury. Detected red flags: Uncontrolled severe arterial bleeding.",
+      "required_facilities": [
+        "Emergency Department",
+        "Trauma Care",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "recommended_response": "CRITICAL ALERT: Immediate emergency medical assistance is recommended. Dispatching telemetry to nearest facility.",
+      "immediate_safety_actions": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "next_quick_question": null,
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Trauma & Physical Injury",
+      "secondary_categories": [
+        "Road accident",
+        "Severe bleeding",
+        "Head injury",
+        "Fracture/major trauma",
+        "Unconscious person"
+      ],
+      "confidence_score": 0.92,
+      "confidence_level": "HIGH",
+      "severity_level": "CRITICAL",
+      "severity_score": 100,
+      "estimated_patient_count": 2,
+      "patient_count_confidence": "HIGH",
+      "consciousness_status": "Unconscious",
+      "consciousness_evidence": "Report/input mentions unconscious, unresponsive, or passed out",
+      "breathing_status": "Unknown",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": true,
+      "hemorrhage_evidence": "Active bleeding reported or detected in scene telemetry",
+      "suspected_physical_trauma": true,
+      "trauma_evidence": "High-energy mechanism or impact reported (Head injury indicator)",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        "Road Accident Highway multi-vehicle collision. Driver unconscious, severe bleeding from forehead, broken windshield."
+      ],
+      "red_flags_detected": [
+        "Uncontrolled severe arterial bleeding"
+      ],
+      "triage_priority_score": 1,
+      "recommended_medical_specialties": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "required_hospital_capabilities": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "immediate_first_aid_steps": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Airway patency and oxygenation status unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "Respiratory rate and SpO2 oxygen saturation percentage"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with CRITICAL triage priority based on rule matches: [Unconscious Patient; Severe Active Hemorrhage; High-Impact Vehicle Collision; Multiple Victims (2 affected)]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \"Road Accident Highway multi-vehicle collision. Dri...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 19.706825, 72.782928"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-25T18:16:34.014Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-25T18:16:34.014Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-25T18:16:34.014Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792952008283-gh0b",
+    "report_id": "ER-2026-762777",
+    "created_at": "2026-10-25T18:13:28.283Z",
+    "emergency_type": "Road Accident",
+    "description": "Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield",
+    "people_affected": 1,
+    "severity": "LOW",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.706660250000002,
+      "longitude": 72.78246475000002,
+      "accuracy": 141,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "address": "GPS Locked (±141m accuracy)",
+      "timestamp": "2026-10-25T18:11:59.309Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Road accident",
+      "categories": [
+        "Road accident"
+      ],
+      "severity": "LOW",
+      "is_critical": false,
+      "confidence": 94,
+      "severity_score": 0,
+      "explainable_breakdown": {
+        "severity": "LOW",
+        "score": 0,
+        "reasons": [
+          "General Triage Assessment"
+        ],
+        "breakdown": []
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \"Visual Indicator: Possible person lying on roadway. Visual I...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: LOW (Score: 0 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": []
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Road accident",
+        "patient_count": 1,
+        "consciousness": "Unknown",
+        "breathing": "Unknown",
+        "visible_bleeding": null,
+        "possible_injury": null,
+        "possible_trauma": true,
+        "observed_information": [
+          "General incident telemetry recorded"
+        ],
+        "user_reported_information": [
+          "Road Accident Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+        ],
+        "ai_inference": [
+          "AI preliminary triage assessment generated"
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Trauma & Physical Injury",
+        "secondary_categories": [
+          "Road accident"
+        ],
+        "confidence_score": 0.92,
+        "confidence_level": "HIGH",
+        "severity_level": "LOW",
+        "severity_score": 25,
+        "estimated_patient_count": 1,
+        "patient_count_confidence": "MEDIUM",
+        "consciousness_status": "Unknown",
+        "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+        "breathing_status": "Unknown",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": null,
+        "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+        "suspected_physical_trauma": true,
+        "trauma_evidence": "High-energy mechanism or impact reported (physical trauma)",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          "Road Accident Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+        ],
+        "red_flags_detected": [
+          "No immediate life-threatening red flags detected"
+        ],
+        "triage_priority_score": 4,
+        "recommended_medical_specialties": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "required_hospital_capabilities": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "immediate_first_aid_steps": [
+          "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+          "Do not move patient if spinal or neck injury is suspected",
+          "Elevate legs if shock signs appear (unless spinal trauma)",
+          "Keep patient warm with blankets to prevent hypothermia"
+        ],
+        "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Patient consciousness state unverified",
+          "Airway patency and oxygenation status unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "AVPU / Glasgow Coma Scale (GCS) assessment score",
+          "Respiratory rate and SpO2 oxygen saturation percentage"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with LOW triage priority based on rule matches: [General Triage Assessment]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \"Road Accident Visual Indicator: Possible person ly...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 19.706660250000002, 72.78246475000002"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority LOW (Score: 0 pts). Category: Trauma & Physical Injury. Detected red flags: No immediate life-threatening red flags detected.",
+      "required_facilities": [
+        "Emergency Department",
+        "Trauma Care",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "recommended_response": "Priority triage evaluation complete. Contacting nearest emergency healthcare facilities.",
+      "immediate_safety_actions": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "next_quick_question": {
+        "id": "q_consciousness",
+        "question": "Is the person conscious and responsive?",
+        "options": [
+          "YES",
+          "NO",
+          "NOT SURE"
+        ]
+      },
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "accident_detection": {
+      "model": "LOCAL YOLOv8 / CAD Computer Vision Model",
+      "object_counts": {
+        "people": 3,
+        "vehicles": 2,
+        "smoke_fire": 0,
+        "damaged_vehicles": 1,
+        "others": 0
+      },
+      "bounding_boxes": [
+        {
+          "class": "People",
+          "label": "Unconscious Individual (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 20,
+            "y": 35,
+            "width": 30,
+            "height": 45
+          }
+        },
+        {
+          "class": "People",
+          "label": "Bystander / Victim (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 60,
+            "y": 20,
+            "width": 25,
+            "height": 50
+          }
+        },
+        {
+          "class": "Damaged Vehicle",
+          "label": "Vehicle Collision (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 15,
+            "y": 10,
+            "width": 45,
+            "height": 40
+          }
+        }
+      ],
+      "objects_summary": "3 People, 2 Vehicles, No Active Fire, Road Obstruction"
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Trauma & Physical Injury",
+      "secondary_categories": [
+        "Road accident"
+      ],
+      "confidence_score": 0.92,
+      "confidence_level": "HIGH",
+      "severity_level": "LOW",
+      "severity_score": 25,
+      "estimated_patient_count": 1,
+      "patient_count_confidence": "MEDIUM",
+      "consciousness_status": "Unknown",
+      "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+      "breathing_status": "Unknown",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": null,
+      "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+      "suspected_physical_trauma": true,
+      "trauma_evidence": "High-energy mechanism or impact reported (physical trauma)",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        "Road Accident Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+      ],
+      "red_flags_detected": [
+        "No immediate life-threatening red flags detected"
+      ],
+      "triage_priority_score": 4,
+      "recommended_medical_specialties": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "required_hospital_capabilities": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "immediate_first_aid_steps": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Patient consciousness state unverified",
+        "Airway patency and oxygenation status unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "AVPU / Glasgow Coma Scale (GCS) assessment score",
+        "Respiratory rate and SpO2 oxygen saturation percentage"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with LOW triage priority based on rule matches: [General Triage Assessment]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \"Road Accident Visual Indicator: Possible person ly...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 19.706660250000002, 72.78246475000002"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-25T18:13:28.283Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-25T18:13:28.283Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-25T18:13:28.283Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792951890144-t8v2",
+    "report_id": "ER-2026-121356",
+    "created_at": "2026-10-25T18:11:30.144Z",
+    "emergency_type": "Road Accident",
+    "description": "Highway multi-vehicle collision. Driver unconscious, severe bleeding from forehead, broken windshield.",
+    "people_affected": 2,
+    "severity": "CRITICAL",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.706561090557646,
+      "longitude": 72.78281382893397,
+      "accuracy": 160,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "address": "GPS Locked (±160m accuracy)",
+      "timestamp": "2026-10-25T18:11:27.076Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Road accident",
+      "categories": [
+        "Road accident",
+        "Severe bleeding",
+        "Head injury",
+        "Fracture/major trauma",
+        "Unconscious person"
+      ],
+      "severity": "CRITICAL",
+      "is_critical": true,
+      "confidence": 94,
+      "severity_score": 16,
+      "explainable_breakdown": {
+        "severity": "CRITICAL",
+        "score": 16,
+        "reasons": [
+          "Unconscious Patient",
+          "Severe Active Hemorrhage",
+          "High-Impact Vehicle Collision",
+          "Multiple Victims (2 affected)"
+        ],
+        "breakdown": [
+          {
+            "factor": "Unconscious Patient",
+            "points": 5
+          },
+          {
+            "factor": "Severe Active Hemorrhage",
+            "points": 5
+          },
+          {
+            "factor": "High-Impact Vehicle Collision",
+            "points": 3
+          },
+          {
+            "factor": "Multiple Victims (2 affected)",
+            "points": 3
+          }
+        ]
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \"Highway multi-vehicle collision. Driver unconscious, severe ...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: CRITICAL (Score: 13 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": [
+              {
+                "factor": "Unconscious Patient",
+                "points": 5
+              },
+              {
+                "factor": "Severe Active Hemorrhage",
+                "points": 5
+              },
+              {
+                "factor": "High-Impact Vehicle Collision",
+                "points": 3
+              }
+            ]
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Road accident + Severe bleeding + Head injury + Fracture/major trauma + Unconscious person",
+        "patient_count": 2,
+        "consciousness": "Unconscious",
+        "breathing": "Unknown",
+        "visible_bleeding": true,
+        "possible_injury": "Head injury indicator",
+        "possible_trauma": true,
+        "observed_information": [
+          "Active hemorrhage reported/observed",
+          "Patient reported unresponsive"
+        ],
+        "user_reported_information": [
+          "Road Accident Highway multi-vehicle collision. Driver unconscious, severe bleeding from forehead, broken windshield."
+        ],
+        "ai_inference": [
+          "Possible severe traumatic brain or cervical injury based on unconsciousness post-impact.",
+          "Active blood loss requiring trauma hemorrhage control readiness."
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Trauma & Physical Injury",
+        "secondary_categories": [
+          "Road accident",
+          "Severe bleeding",
+          "Head injury",
+          "Fracture/major trauma",
+          "Unconscious person"
+        ],
+        "confidence_score": 0.92,
+        "confidence_level": "HIGH",
+        "severity_level": "CRITICAL",
+        "severity_score": 100,
+        "estimated_patient_count": 2,
+        "patient_count_confidence": "HIGH",
+        "consciousness_status": "Unconscious",
+        "consciousness_evidence": "Report/input mentions unconscious, unresponsive, or passed out",
+        "breathing_status": "Unknown",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": true,
+        "hemorrhage_evidence": "Active bleeding reported or detected in scene telemetry",
+        "suspected_physical_trauma": true,
+        "trauma_evidence": "High-energy mechanism or impact reported (Head injury indicator)",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          "Road Accident Highway multi-vehicle collision. Driver unconscious, severe bleeding from forehead, broken windshield."
+        ],
+        "red_flags_detected": [
+          "Uncontrolled severe arterial bleeding"
+        ],
+        "triage_priority_score": 1,
+        "recommended_medical_specialties": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "required_hospital_capabilities": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "immediate_first_aid_steps": [
+          "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+          "Do not move patient if spinal or neck injury is suspected",
+          "Elevate legs if shock signs appear (unless spinal trauma)",
+          "Keep patient warm with blankets to prevent hypothermia"
+        ],
+        "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Airway patency and oxygenation status unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "Respiratory rate and SpO2 oxygen saturation percentage"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with CRITICAL triage priority based on rule matches: [Unconscious Patient; Severe Active Hemorrhage; High-Impact Vehicle Collision; Multiple Victims (2 affected)]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \"Road Accident Highway multi-vehicle collision. Dri...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 19.706561090557646, 72.78281382893397"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority CRITICAL (Score: 16 pts). Category: Trauma & Physical Injury. Detected red flags: Uncontrolled severe arterial bleeding.",
+      "required_facilities": [
+        "Emergency Department",
+        "Trauma Care",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "recommended_response": "CRITICAL ALERT: Immediate emergency medical assistance is recommended. Dispatching telemetry to nearest facility.",
+      "immediate_safety_actions": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "next_quick_question": null,
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Trauma & Physical Injury",
+      "secondary_categories": [
+        "Road accident",
+        "Severe bleeding",
+        "Head injury",
+        "Fracture/major trauma",
+        "Unconscious person"
+      ],
+      "confidence_score": 0.92,
+      "confidence_level": "HIGH",
+      "severity_level": "CRITICAL",
+      "severity_score": 100,
+      "estimated_patient_count": 2,
+      "patient_count_confidence": "HIGH",
+      "consciousness_status": "Unconscious",
+      "consciousness_evidence": "Report/input mentions unconscious, unresponsive, or passed out",
+      "breathing_status": "Unknown",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": true,
+      "hemorrhage_evidence": "Active bleeding reported or detected in scene telemetry",
+      "suspected_physical_trauma": true,
+      "trauma_evidence": "High-energy mechanism or impact reported (Head injury indicator)",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        "Road Accident Highway multi-vehicle collision. Driver unconscious, severe bleeding from forehead, broken windshield."
+      ],
+      "red_flags_detected": [
+        "Uncontrolled severe arterial bleeding"
+      ],
+      "triage_priority_score": 1,
+      "recommended_medical_specialties": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "required_hospital_capabilities": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "immediate_first_aid_steps": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Airway patency and oxygenation status unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "Respiratory rate and SpO2 oxygen saturation percentage"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with CRITICAL triage priority based on rule matches: [Unconscious Patient; Severe Active Hemorrhage; High-Impact Vehicle Collision; Multiple Victims (2 affected)]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \"Road Accident Highway multi-vehicle collision. Dri...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 19.706561090557646, 72.78281382893397"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-25T18:11:30.144Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-25T18:11:30.144Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-25T18:11:30.144Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792950846753-y335",
+    "report_id": "ER-2026-536316",
+    "created_at": "2026-10-25T17:54:06.753Z",
+    "emergency_type": "Other medical emergency",
+    "description": ". Quick check (Is the person conscious and responsive?): YES",
+    "people_affected": 3,
+    "severity": "MODERATE",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.70634878484505,
+      "longitude": 72.78221686006381,
+      "accuracy": 160,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "address": "GPS Locked (±160m accuracy)",
+      "timestamp": "2026-10-25T17:51:22.056Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Other medical emergency",
+      "categories": [
+        "Other medical emergency"
+      ],
+      "severity": "MODERATE",
+      "is_critical": false,
+      "confidence": 94,
+      "severity_score": 3,
+      "explainable_breakdown": {
+        "severity": "MODERATE",
+        "score": 3,
+        "reasons": [
+          "Multiple Victims (3 affected)"
+        ],
+        "breakdown": [
+          {
+            "factor": "Multiple Victims (3 affected)",
+            "points": 3
+          }
+        ]
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \". Quick check (Is the person conscious and responsive?): YES...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: LOW (Score: 0 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": []
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Other medical emergency",
+        "patient_count": 3,
+        "consciousness": "Conscious",
+        "breathing": "Unknown",
+        "visible_bleeding": null,
+        "possible_injury": null,
+        "possible_trauma": false,
+        "observed_information": [
+          "General incident telemetry recorded"
+        ],
+        "user_reported_information": [
+          ". Quick check (Is the person conscious and responsive?): YES"
+        ],
+        "ai_inference": [
+          "AI preliminary triage assessment generated"
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Trauma & Physical Injury",
+        "secondary_categories": [
+          "Other medical emergency"
+        ],
+        "confidence_score": 0.89,
+        "confidence_level": "HIGH",
+        "severity_level": "MODERATE",
+        "severity_score": 45,
+        "estimated_patient_count": 3,
+        "patient_count_confidence": "HIGH",
+        "consciousness_status": "Conscious",
+        "consciousness_evidence": "Report/input indicates conscious state",
+        "breathing_status": "Unknown",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": null,
+        "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+        "suspected_physical_trauma": false,
+        "trauma_evidence": "No high-energy mechanical impact identified",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          ". Quick check (Is the person conscious and responsive?): YES"
+        ],
+        "red_flags_detected": [
+          "No immediate life-threatening red flags detected"
+        ],
+        "triage_priority_score": 3,
+        "recommended_medical_specialties": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "required_hospital_capabilities": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "immediate_first_aid_steps": [
+          "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+          "Do not move patient if spinal or neck injury is suspected",
+          "Elevate legs if shock signs appear (unless spinal trauma)",
+          "Keep patient warm with blankets to prevent hypothermia"
+        ],
+        "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Airway patency and oxygenation status unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "Respiratory rate and SpO2 oxygen saturation percentage"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with MODERATE triage priority based on rule matches: [Multiple Victims (3 affected)]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \". Quick check (Is the person conscious and respons...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 19.70634878484505, 72.78221686006381"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority MODERATE (Score: 3 pts). Category: Trauma & Physical Injury. Detected red flags: No immediate life-threatening red flags detected.",
+      "required_facilities": [
+        "Emergency Department",
+        "Trauma Care",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "recommended_response": "Priority triage evaluation complete. Contacting nearest emergency healthcare facilities.",
+      "immediate_safety_actions": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "next_quick_question": {
+        "id": "q_breathing",
+        "question": "Is the person breathing normally?",
+        "options": [
+          "YES",
+          "NO",
+          "NOT SURE"
+        ]
+      },
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "accident_detection": {
+      "model": "LOCAL YOLOv8 / CAD Computer Vision Model",
+      "object_counts": {
+        "people": 3,
+        "vehicles": 2,
+        "smoke_fire": 0,
+        "damaged_vehicles": 1,
+        "others": 0
+      },
+      "bounding_boxes": [
+        {
+          "class": "People",
+          "label": "Unconscious Individual (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 20,
+            "y": 35,
+            "width": 30,
+            "height": 45
+          }
+        },
+        {
+          "class": "People",
+          "label": "Bystander / Victim (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 60,
+            "y": 20,
+            "width": 25,
+            "height": 50
+          }
+        },
+        {
+          "class": "Damaged Vehicle",
+          "label": "Vehicle Collision (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 15,
+            "y": 10,
+            "width": 45,
+            "height": 40
+          }
+        }
+      ],
+      "objects_summary": "3 People, 2 Vehicles, No Active Fire, Road Obstruction"
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Trauma & Physical Injury",
+      "secondary_categories": [
+        "Other medical emergency"
+      ],
+      "confidence_score": 0.89,
+      "confidence_level": "HIGH",
+      "severity_level": "MODERATE",
+      "severity_score": 45,
+      "estimated_patient_count": 3,
+      "patient_count_confidence": "HIGH",
+      "consciousness_status": "Conscious",
+      "consciousness_evidence": "Report/input indicates conscious state",
+      "breathing_status": "Unknown",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": null,
+      "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+      "suspected_physical_trauma": false,
+      "trauma_evidence": "No high-energy mechanical impact identified",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        ". Quick check (Is the person conscious and responsive?): YES"
+      ],
+      "red_flags_detected": [
+        "No immediate life-threatening red flags detected"
+      ],
+      "triage_priority_score": 3,
+      "recommended_medical_specialties": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "required_hospital_capabilities": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "immediate_first_aid_steps": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Airway patency and oxygenation status unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "Respiratory rate and SpO2 oxygen saturation percentage"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with MODERATE triage priority based on rule matches: [Multiple Victims (3 affected)]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \". Quick check (Is the person conscious and respons...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 19.70634878484505, 72.78221686006381"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-25T17:54:06.753Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-25T17:54:06.753Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-25T17:54:06.753Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792950845756-dee1",
+    "report_id": "ER-2026-138092",
+    "created_at": "2026-10-25T17:54:05.756Z",
+    "emergency_type": "Breathing emergency",
+    "description": ". Quick check (Is the person breathing normally?): YES",
+    "people_affected": 3,
+    "severity": "MODERATE",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.70634878484505,
+      "longitude": 72.78221686006381,
+      "accuracy": 160,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "address": "GPS Locked (±160m accuracy)",
+      "timestamp": "2026-10-25T17:51:22.056Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Breathing emergency",
+      "categories": [
+        "Breathing emergency"
+      ],
+      "severity": "MODERATE",
+      "is_critical": false,
+      "confidence": 94,
+      "severity_score": 3,
+      "explainable_breakdown": {
+        "severity": "MODERATE",
+        "score": 3,
+        "reasons": [
+          "Multiple Victims (3 affected)"
+        ],
+        "breakdown": [
+          {
+            "factor": "Multiple Victims (3 affected)",
+            "points": 3
+          }
+        ]
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \". Quick check (Is the person breathing normally?): YES...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: LOW (Score: 0 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": []
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Breathing emergency",
+        "patient_count": 3,
+        "consciousness": "Unknown",
+        "breathing": "Normal",
+        "visible_bleeding": null,
+        "possible_injury": null,
+        "possible_trauma": false,
+        "observed_information": [
+          "General incident telemetry recorded"
+        ],
+        "user_reported_information": [
+          ". Quick check (Is the person breathing normally?): YES"
+        ],
+        "ai_inference": [
+          "AI preliminary triage assessment generated"
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Cardiovascular Emergencies",
+        "secondary_categories": [
+          "Breathing emergency"
+        ],
+        "confidence_score": 0.89,
+        "confidence_level": "HIGH",
+        "severity_level": "MODERATE",
+        "severity_score": 45,
+        "estimated_patient_count": 3,
+        "patient_count_confidence": "HIGH",
+        "consciousness_status": "Unknown",
+        "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+        "breathing_status": "Normal",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": null,
+        "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+        "suspected_physical_trauma": false,
+        "trauma_evidence": "No high-energy mechanical impact identified",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          ". Quick check (Is the person breathing normally?): YES"
+        ],
+        "red_flags_detected": [
+          "Sudden loss of consciousness with absent normal breathing (Cardiac Arrest)"
+        ],
+        "triage_priority_score": 3,
+        "recommended_medical_specialties": [
+          "Cath Lab",
+          "Cardiology",
+          "ICU",
+          "Emergency Department",
+          "Defibrillator"
+        ],
+        "required_hospital_capabilities": [
+          "Cath Lab",
+          "Cardiology",
+          "ICU",
+          "Emergency Department",
+          "Defibrillator"
+        ],
+        "immediate_first_aid_steps": [
+          "Perform CPR immediately if unconscious and non-breathing (30 compressions : 2 breaths)",
+          "Locate and apply Automated External Defibrillator (AED) if available",
+          "Keep conscious patient calm in comfortable sitting/semi-recumbent position",
+          "Administer 300mg Aspirin if conscious and not allergic"
+        ],
+        "dispatch_recommendations": "Dispatch Mobile Cardiac Care Unit (MCCU) / ALS Ambulance with AED and EKG capability.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Patient consciousness state unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "AVPU / Glasgow Coma Scale (GCS) assessment score"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Cardiovascular Emergencies with MODERATE triage priority based on rule matches: [Multiple Victims (3 affected)]. Recommended destination capabilities: Cath Lab, Cardiology, ICU, Emergency Department, Defibrillator.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \". Quick check (Is the person breathing normally?):...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 19.70634878484505, 72.78221686006381"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority MODERATE (Score: 3 pts). Category: Cardiovascular Emergencies. Detected red flags: Sudden loss of consciousness with absent normal breathing (Cardiac Arrest).",
+      "required_facilities": [
+        "Emergency Department",
+        "Cath Lab",
+        "Cardiology",
+        "ICU",
+        "Defibrillator"
+      ],
+      "recommended_response": "Priority triage evaluation complete. Contacting nearest emergency healthcare facilities.",
+      "immediate_safety_actions": [
+        "Perform CPR immediately if unconscious and non-breathing (30 compressions : 2 breaths)",
+        "Locate and apply Automated External Defibrillator (AED) if available",
+        "Keep conscious patient calm in comfortable sitting/semi-recumbent position",
+        "Administer 300mg Aspirin if conscious and not allergic"
+      ],
+      "next_quick_question": {
+        "id": "q_consciousness",
+        "question": "Is the person conscious and responsive?",
+        "options": [
+          "YES",
+          "NO",
+          "NOT SURE"
+        ]
+      },
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "accident_detection": {
+      "model": "LOCAL YOLOv8 / CAD Computer Vision Model",
+      "object_counts": {
+        "people": 3,
+        "vehicles": 2,
+        "smoke_fire": 0,
+        "damaged_vehicles": 1,
+        "others": 0
+      },
+      "bounding_boxes": [
+        {
+          "class": "People",
+          "label": "Unconscious Individual (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 20,
+            "y": 35,
+            "width": 30,
+            "height": 45
+          }
+        },
+        {
+          "class": "People",
+          "label": "Bystander / Victim (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 60,
+            "y": 20,
+            "width": 25,
+            "height": 50
+          }
+        },
+        {
+          "class": "Damaged Vehicle",
+          "label": "Vehicle Collision (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 15,
+            "y": 10,
+            "width": 45,
+            "height": 40
+          }
+        }
+      ],
+      "objects_summary": "3 People, 2 Vehicles, No Active Fire, Road Obstruction"
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Cardiovascular Emergencies",
+      "secondary_categories": [
+        "Breathing emergency"
+      ],
+      "confidence_score": 0.89,
+      "confidence_level": "HIGH",
+      "severity_level": "MODERATE",
+      "severity_score": 45,
+      "estimated_patient_count": 3,
+      "patient_count_confidence": "HIGH",
+      "consciousness_status": "Unknown",
+      "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+      "breathing_status": "Normal",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": null,
+      "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+      "suspected_physical_trauma": false,
+      "trauma_evidence": "No high-energy mechanical impact identified",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        ". Quick check (Is the person breathing normally?): YES"
+      ],
+      "red_flags_detected": [
+        "Sudden loss of consciousness with absent normal breathing (Cardiac Arrest)"
+      ],
+      "triage_priority_score": 3,
+      "recommended_medical_specialties": [
+        "Cath Lab",
+        "Cardiology",
+        "ICU",
+        "Emergency Department",
+        "Defibrillator"
+      ],
+      "required_hospital_capabilities": [
+        "Cath Lab",
+        "Cardiology",
+        "ICU",
+        "Emergency Department",
+        "Defibrillator"
+      ],
+      "immediate_first_aid_steps": [
+        "Perform CPR immediately if unconscious and non-breathing (30 compressions : 2 breaths)",
+        "Locate and apply Automated External Defibrillator (AED) if available",
+        "Keep conscious patient calm in comfortable sitting/semi-recumbent position",
+        "Administer 300mg Aspirin if conscious and not allergic"
+      ],
+      "dispatch_recommendations": "Dispatch Mobile Cardiac Care Unit (MCCU) / ALS Ambulance with AED and EKG capability.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Patient consciousness state unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "AVPU / Glasgow Coma Scale (GCS) assessment score"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Cardiovascular Emergencies with MODERATE triage priority based on rule matches: [Multiple Victims (3 affected)]. Recommended destination capabilities: Cath Lab, Cardiology, ICU, Emergency Department, Defibrillator.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \". Quick check (Is the person breathing normally?):...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 19.70634878484505, 72.78221686006381"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-25T17:54:05.756Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-25T17:54:05.756Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-25T17:54:05.756Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792950845394-305t",
+    "report_id": "ER-2026-184020",
+    "created_at": "2026-10-25T17:54:05.394Z",
+    "emergency_type": "Other medical emergency",
+    "description": ". Quick check (Is the person conscious and responsive?): YES",
+    "people_affected": 3,
+    "severity": "MODERATE",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.70634878484505,
+      "longitude": 72.78221686006381,
+      "accuracy": 160,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "address": "GPS Locked (±160m accuracy)",
+      "timestamp": "2026-10-25T17:51:22.056Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Other medical emergency",
+      "categories": [
+        "Other medical emergency"
+      ],
+      "severity": "MODERATE",
+      "is_critical": false,
+      "confidence": 94,
+      "severity_score": 3,
+      "explainable_breakdown": {
+        "severity": "MODERATE",
+        "score": 3,
+        "reasons": [
+          "Multiple Victims (3 affected)"
+        ],
+        "breakdown": [
+          {
+            "factor": "Multiple Victims (3 affected)",
+            "points": 3
+          }
+        ]
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \". Quick check (Is the person conscious and responsive?): YES...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: LOW (Score: 0 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": []
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Other medical emergency",
+        "patient_count": 3,
+        "consciousness": "Conscious",
+        "breathing": "Unknown",
+        "visible_bleeding": null,
+        "possible_injury": null,
+        "possible_trauma": false,
+        "observed_information": [
+          "General incident telemetry recorded"
+        ],
+        "user_reported_information": [
+          ". Quick check (Is the person conscious and responsive?): YES"
+        ],
+        "ai_inference": [
+          "AI preliminary triage assessment generated"
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Trauma & Physical Injury",
+        "secondary_categories": [
+          "Other medical emergency"
+        ],
+        "confidence_score": 0.89,
+        "confidence_level": "HIGH",
+        "severity_level": "MODERATE",
+        "severity_score": 45,
+        "estimated_patient_count": 3,
+        "patient_count_confidence": "HIGH",
+        "consciousness_status": "Conscious",
+        "consciousness_evidence": "Report/input indicates conscious state",
+        "breathing_status": "Unknown",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": null,
+        "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+        "suspected_physical_trauma": false,
+        "trauma_evidence": "No high-energy mechanical impact identified",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          ". Quick check (Is the person conscious and responsive?): YES"
+        ],
+        "red_flags_detected": [
+          "No immediate life-threatening red flags detected"
+        ],
+        "triage_priority_score": 3,
+        "recommended_medical_specialties": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "required_hospital_capabilities": [
+          "Trauma Care",
+          "Emergency Department",
+          "Orthopedics",
+          "ICU",
+          "Blood Bank"
+        ],
+        "immediate_first_aid_steps": [
+          "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+          "Do not move patient if spinal or neck injury is suspected",
+          "Elevate legs if shock signs appear (unless spinal trauma)",
+          "Keep patient warm with blankets to prevent hypothermia"
+        ],
+        "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Airway patency and oxygenation status unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "Respiratory rate and SpO2 oxygen saturation percentage"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with MODERATE triage priority based on rule matches: [Multiple Victims (3 affected)]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \". Quick check (Is the person conscious and respons...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 19.70634878484505, 72.78221686006381"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority MODERATE (Score: 3 pts). Category: Trauma & Physical Injury. Detected red flags: No immediate life-threatening red flags detected.",
+      "required_facilities": [
+        "Emergency Department",
+        "Trauma Care",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "recommended_response": "Priority triage evaluation complete. Contacting nearest emergency healthcare facilities.",
+      "immediate_safety_actions": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "next_quick_question": {
+        "id": "q_breathing",
+        "question": "Is the person breathing normally?",
+        "options": [
+          "YES",
+          "NO",
+          "NOT SURE"
+        ]
+      },
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "accident_detection": {
+      "model": "LOCAL YOLOv8 / CAD Computer Vision Model",
+      "object_counts": {
+        "people": 3,
+        "vehicles": 2,
+        "smoke_fire": 0,
+        "damaged_vehicles": 1,
+        "others": 0
+      },
+      "bounding_boxes": [
+        {
+          "class": "People",
+          "label": "Unconscious Individual (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 20,
+            "y": 35,
+            "width": 30,
+            "height": 45
+          }
+        },
+        {
+          "class": "People",
+          "label": "Bystander / Victim (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 60,
+            "y": 20,
+            "width": 25,
+            "height": 50
+          }
+        },
+        {
+          "class": "Damaged Vehicle",
+          "label": "Vehicle Collision (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 15,
+            "y": 10,
+            "width": 45,
+            "height": 40
+          }
+        }
+      ],
+      "objects_summary": "3 People, 2 Vehicles, No Active Fire, Road Obstruction"
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Trauma & Physical Injury",
+      "secondary_categories": [
+        "Other medical emergency"
+      ],
+      "confidence_score": 0.89,
+      "confidence_level": "HIGH",
+      "severity_level": "MODERATE",
+      "severity_score": 45,
+      "estimated_patient_count": 3,
+      "patient_count_confidence": "HIGH",
+      "consciousness_status": "Conscious",
+      "consciousness_evidence": "Report/input indicates conscious state",
+      "breathing_status": "Unknown",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": null,
+      "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+      "suspected_physical_trauma": false,
+      "trauma_evidence": "No high-energy mechanical impact identified",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        ". Quick check (Is the person conscious and responsive?): YES"
+      ],
+      "red_flags_detected": [
+        "No immediate life-threatening red flags detected"
+      ],
+      "triage_priority_score": 3,
+      "recommended_medical_specialties": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "required_hospital_capabilities": [
+        "Trauma Care",
+        "Emergency Department",
+        "Orthopedics",
+        "ICU",
+        "Blood Bank"
+      ],
+      "immediate_first_aid_steps": [
+        "Apply direct firm pressure with clean cloth/bandage to bleeding site",
+        "Do not move patient if spinal or neck injury is suspected",
+        "Elevate legs if shock signs appear (unless spinal trauma)",
+        "Keep patient warm with blankets to prevent hypothermia"
+      ],
+      "dispatch_recommendations": "Dispatch Advanced Life Support (ALS) Ambulance with Trauma Protocol enabled.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Airway patency and oxygenation status unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "Respiratory rate and SpO2 oxygen saturation percentage"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Trauma & Physical Injury with MODERATE triage priority based on rule matches: [Multiple Victims (3 affected)]. Recommended destination capabilities: Trauma Care, Emergency Department, Orthopedics, ICU, Blood Bank.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \". Quick check (Is the person conscious and respons...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 19.70634878484505, 72.78221686006381"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-25T17:54:05.394Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-25T17:54:05.394Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-25T17:54:05.394Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792950847750-h7tb",
+    "report_id": "ER-2026-106311",
+    "created_at": "2026-10-25T17:54:07.751Z",
+    "emergency_type": "Breathing emergency",
+    "description": ". Quick check (Is the person breathing normally?): YES",
+    "people_affected": 3,
+    "severity": "MODERATE",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.70634878484505,
+      "longitude": 72.78221686006381,
+      "accuracy": 160,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "address": "GPS Locked (±160m accuracy)",
+      "timestamp": "2026-10-25T17:51:22.056Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Breathing emergency",
+      "categories": [
+        "Breathing emergency"
+      ],
+      "severity": "MODERATE",
+      "is_critical": false,
+      "confidence": 94,
+      "severity_score": 3,
+      "explainable_breakdown": {
+        "severity": "MODERATE",
+        "score": 3,
+        "reasons": [
+          "Multiple Victims (3 affected)"
+        ],
+        "breakdown": [
+          {
+            "factor": "Multiple Victims (3 affected)",
+            "points": 3
+          }
+        ]
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \". Quick check (Is the person breathing normally?): YES...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: LOW (Score: 0 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": []
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Breathing emergency",
+        "patient_count": 3,
+        "consciousness": "Unknown",
+        "breathing": "Normal",
+        "visible_bleeding": null,
+        "possible_injury": null,
+        "possible_trauma": false,
+        "observed_information": [
+          "General incident telemetry recorded"
+        ],
+        "user_reported_information": [
+          ". Quick check (Is the person breathing normally?): YES"
+        ],
+        "ai_inference": [
+          "AI preliminary triage assessment generated"
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Cardiovascular Emergencies",
+        "secondary_categories": [
+          "Breathing emergency"
+        ],
+        "confidence_score": 0.89,
+        "confidence_level": "HIGH",
+        "severity_level": "MODERATE",
+        "severity_score": 45,
+        "estimated_patient_count": 3,
+        "patient_count_confidence": "HIGH",
+        "consciousness_status": "Unknown",
+        "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+        "breathing_status": "Normal",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": null,
+        "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+        "suspected_physical_trauma": false,
+        "trauma_evidence": "No high-energy mechanical impact identified",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          ". Quick check (Is the person breathing normally?): YES"
+        ],
+        "red_flags_detected": [
+          "Sudden loss of consciousness with absent normal breathing (Cardiac Arrest)"
+        ],
+        "triage_priority_score": 3,
+        "recommended_medical_specialties": [
+          "Cath Lab",
+          "Cardiology",
+          "ICU",
+          "Emergency Department",
+          "Defibrillator"
+        ],
+        "required_hospital_capabilities": [
+          "Cath Lab",
+          "Cardiology",
+          "ICU",
+          "Emergency Department",
+          "Defibrillator"
+        ],
+        "immediate_first_aid_steps": [
+          "Perform CPR immediately if unconscious and non-breathing (30 compressions : 2 breaths)",
+          "Locate and apply Automated External Defibrillator (AED) if available",
+          "Keep conscious patient calm in comfortable sitting/semi-recumbent position",
+          "Administer 300mg Aspirin if conscious and not allergic"
+        ],
+        "dispatch_recommendations": "Dispatch Mobile Cardiac Care Unit (MCCU) / ALS Ambulance with AED and EKG capability.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Patient consciousness state unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "AVPU / Glasgow Coma Scale (GCS) assessment score"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Cardiovascular Emergencies with MODERATE triage priority based on rule matches: [Multiple Victims (3 affected)]. Recommended destination capabilities: Cath Lab, Cardiology, ICU, Emergency Department, Defibrillator.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \". Quick check (Is the person breathing normally?):...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 19.70634878484505, 72.78221686006381"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority MODERATE (Score: 3 pts). Category: Cardiovascular Emergencies. Detected red flags: Sudden loss of consciousness with absent normal breathing (Cardiac Arrest).",
+      "required_facilities": [
+        "Emergency Department",
+        "Cath Lab",
+        "Cardiology",
+        "ICU",
+        "Defibrillator"
+      ],
+      "recommended_response": "Priority triage evaluation complete. Contacting nearest emergency healthcare facilities.",
+      "immediate_safety_actions": [
+        "Perform CPR immediately if unconscious and non-breathing (30 compressions : 2 breaths)",
+        "Locate and apply Automated External Defibrillator (AED) if available",
+        "Keep conscious patient calm in comfortable sitting/semi-recumbent position",
+        "Administer 300mg Aspirin if conscious and not allergic"
+      ],
+      "next_quick_question": {
+        "id": "q_consciousness",
+        "question": "Is the person conscious and responsive?",
+        "options": [
+          "YES",
+          "NO",
+          "NOT SURE"
+        ]
+      },
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "accident_detection": {
+      "model": "LOCAL YOLOv8 / CAD Computer Vision Model",
+      "object_counts": {
+        "people": 3,
+        "vehicles": 2,
+        "smoke_fire": 0,
+        "damaged_vehicles": 1,
+        "others": 0
+      },
+      "bounding_boxes": [
+        {
+          "class": "People",
+          "label": "Unconscious Individual (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 20,
+            "y": 35,
+            "width": 30,
+            "height": 45
+          }
+        },
+        {
+          "class": "People",
+          "label": "Bystander / Victim (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 60,
+            "y": 20,
+            "width": 25,
+            "height": 50
+          }
+        },
+        {
+          "class": "Damaged Vehicle",
+          "label": "Vehicle Collision (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 15,
+            "y": 10,
+            "width": 45,
+            "height": 40
+          }
+        }
+      ],
+      "objects_summary": "3 People, 2 Vehicles, No Active Fire, Road Obstruction"
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Cardiovascular Emergencies",
+      "secondary_categories": [
+        "Breathing emergency"
+      ],
+      "confidence_score": 0.89,
+      "confidence_level": "HIGH",
+      "severity_level": "MODERATE",
+      "severity_score": 45,
+      "estimated_patient_count": 3,
+      "patient_count_confidence": "HIGH",
+      "consciousness_status": "Unknown",
+      "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+      "breathing_status": "Normal",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": null,
+      "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+      "suspected_physical_trauma": false,
+      "trauma_evidence": "No high-energy mechanical impact identified",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        ". Quick check (Is the person breathing normally?): YES"
+      ],
+      "red_flags_detected": [
+        "Sudden loss of consciousness with absent normal breathing (Cardiac Arrest)"
+      ],
+      "triage_priority_score": 3,
+      "recommended_medical_specialties": [
+        "Cath Lab",
+        "Cardiology",
+        "ICU",
+        "Emergency Department",
+        "Defibrillator"
+      ],
+      "required_hospital_capabilities": [
+        "Cath Lab",
+        "Cardiology",
+        "ICU",
+        "Emergency Department",
+        "Defibrillator"
+      ],
+      "immediate_first_aid_steps": [
+        "Perform CPR immediately if unconscious and non-breathing (30 compressions : 2 breaths)",
+        "Locate and apply Automated External Defibrillator (AED) if available",
+        "Keep conscious patient calm in comfortable sitting/semi-recumbent position",
+        "Administer 300mg Aspirin if conscious and not allergic"
+      ],
+      "dispatch_recommendations": "Dispatch Mobile Cardiac Care Unit (MCCU) / ALS Ambulance with AED and EKG capability.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Patient consciousness state unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "AVPU / Glasgow Coma Scale (GCS) assessment score"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Cardiovascular Emergencies with MODERATE triage priority based on rule matches: [Multiple Victims (3 affected)]. Recommended destination capabilities: Cath Lab, Cardiology, ICU, Emergency Department, Defibrillator.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \". Quick check (Is the person breathing normally?):...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 19.70634878484505, 72.78221686006381"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-25T17:54:07.751Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-25T17:54:07.751Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-25T17:54:07.751Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-1792950799265-iam4",
+    "report_id": "ER-2026-940387",
+    "created_at": "2026-10-25T17:53:19.265Z",
+    "emergency_type": "Road accident",
+    "description": "Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield",
+    "people_affected": 3,
+    "severity": "MODERATE",
+    "ai_confidence": 94,
+    "status": "HOSPITAL_RECOMMENDED",
+    "location": {
+      "latitude": 19.70634878484505,
+      "longitude": 72.78221686006381,
+      "accuracy": 160,
+      "quality": "LOW",
+      "source": "DEVICE_GPS",
+      "address": "GPS Locked (±160m accuracy)",
+      "timestamp": "2026-10-25T17:51:22.056Z"
+    },
+    "media_urls": [],
+    "ai_assessment": {
+      "emergency_type": "Road accident",
+      "categories": [
+        "Road accident"
+      ],
+      "severity": "MODERATE",
+      "is_critical": false,
+      "confidence": 94,
+      "severity_score": 3,
+      "explainable_breakdown": {
+        "severity": "MODERATE",
+        "score": 3,
+        "reasons": [
+          "Multiple Victims (3 affected)"
+        ],
+        "breakdown": [
+          {
+            "factor": "Multiple Victims (3 affected)",
+            "points": 3
+          }
+        ]
+      },
+      "observations": [
+        {
+          "id": "obs-rep-1",
+          "source": "TEXT",
+          "observation_type": "USER_REPORTED",
+          "label": "Text Input: \"Visual Indicator: Possible person lying on roadway. Visual I...\"",
+          "confidence": 100
+        },
+        {
+          "id": "obs-inf-1",
+          "source": "INFERENCE",
+          "observation_type": "SEVERITY_TRIAGE",
+          "label": "AI Priority Triage: LOW (Score: 0 pts)",
+          "confidence": 94,
+          "metadata": {
+            "breakdown": []
+          }
+        }
+      ],
+      "structured_extraction": {
+        "incident": "Road accident",
+        "patient_count": 3,
+        "consciousness": "Unknown",
+        "breathing": "Unknown",
+        "visible_bleeding": null,
+        "possible_injury": null,
+        "possible_trauma": false,
+        "observed_information": [
+          "General incident telemetry recorded"
+        ],
+        "user_reported_information": [
+          "Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+        ],
+        "ai_inference": [
+          "AI preliminary triage assessment generated"
+        ]
+      },
+      "detailed_analysis": {
+        "primary_incident_category": "Mass Casualty & Disaster Incidents",
+        "secondary_categories": [
+          "Road accident"
+        ],
+        "confidence_score": 0.89,
+        "confidence_level": "HIGH",
+        "severity_level": "MODERATE",
+        "severity_score": 45,
+        "estimated_patient_count": 3,
+        "patient_count_confidence": "HIGH",
+        "consciousness_status": "Unknown",
+        "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+        "breathing_status": "Unknown",
+        "breathing_evidence": "No explicit respiratory failure reported",
+        "active_hemorrhage_observed": null,
+        "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+        "suspected_physical_trauma": false,
+        "trauma_evidence": "No high-energy mechanical impact identified",
+        "visual_scene_descriptors": [
+          "No image telemetry attached"
+        ],
+        "voice_audio_descriptors": [
+          "No audio recording submitted"
+        ],
+        "key_text_extracts": [
+          "Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+        ],
+        "red_flags_detected": [
+          "Hazardous material release or structural instability at scene"
+        ],
+        "triage_priority_score": 3,
+        "recommended_medical_specialties": [
+          "Trauma Care",
+          "Emergency Department",
+          "Blood Bank",
+          "Disaster Management",
+          "ICU"
+        ],
+        "required_hospital_capabilities": [
+          "Trauma Care",
+          "Emergency Department",
+          "Blood Bank",
+          "Disaster Management",
+          "ICU"
+        ],
+        "immediate_first_aid_steps": [
+          "Perform START triage (Simple Triage and Rapid Treatment)",
+          "Prioritize immediate airway opening and arterial hemorrhage control",
+          "Establish incident command post and safe zone"
+        ],
+        "dispatch_recommendations": "Trigger Disaster Mass Casualty Incident (MCI) Protocol; dispatch multiple ALS units.",
+        "key_uncertainties": [
+          "Exact number of injured people on scene",
+          "Presence of internal hemorrhage or closed organ trauma",
+          "Patient consciousness state unverified",
+          "Airway patency and oxygenation status unverified"
+        ],
+        "missing_critical_data": [
+          "On-scene vitals (Blood pressure, Pulse, SpO2)",
+          "AVPU / Glasgow Coma Scale (GCS) assessment score",
+          "Respiratory rate and SpO2 oxygen saturation percentage"
+        ],
+        "recommended_clarifying_questions": [
+          "Is the patient breathing without obstruction?",
+          "Are there any signs of head trauma or neck pain?",
+          "Is there active arterial bleeding?"
+        ],
+        "clinical_reasoning_summary": "Incident categorized under Mass Casualty & Disaster Incidents with MODERATE triage priority based on rule matches: [Multiple Victims (3 affected)]. Recommended destination capabilities: Trauma Care, Emergency Department, Blood Bank, Disaster Management, ICU.",
+        "evidence_provenance": [
+          {
+            "source": "TEXT",
+            "detail": "User typed report: \"Visual Indicator: Possible person lying on roadway...\""
+          },
+          {
+            "source": "GPS",
+            "detail": "Browser GPS coordinates: 19.70634878484505, 72.78221686006381"
+          }
+        ],
+        "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+      },
+      "reasoning": "AI Emergency Assessment: Triage priority MODERATE (Score: 3 pts). Category: Mass Casualty & Disaster Incidents. Detected red flags: Hazardous material release or structural instability at scene.",
+      "required_facilities": [
+        "Emergency Department",
+        "Trauma Care",
+        "Blood Bank",
+        "Disaster Management",
+        "ICU"
+      ],
+      "recommended_response": "Priority triage evaluation complete. Contacting nearest emergency healthcare facilities.",
+      "immediate_safety_actions": [
+        "Perform START triage (Simple Triage and Rapid Treatment)",
+        "Prioritize immediate airway opening and arterial hemorrhage control",
+        "Establish incident command post and safe zone"
+      ],
+      "next_quick_question": {
+        "id": "q_consciousness",
+        "question": "Is the person conscious and responsive?",
+        "options": [
+          "YES",
+          "NO",
+          "NOT SURE"
+        ]
+      },
+      "disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "accident_detection": {
+      "model": "LOCAL YOLOv8 / CAD Computer Vision Model",
+      "object_counts": {
+        "people": 3,
+        "vehicles": 2,
+        "smoke_fire": 0,
+        "damaged_vehicles": 1,
+        "others": 0
+      },
+      "bounding_boxes": [
+        {
+          "class": "People",
+          "label": "Unconscious Individual (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 20,
+            "y": 35,
+            "width": 30,
+            "height": 45
+          }
+        },
+        {
+          "class": "People",
+          "label": "Bystander / Victim (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 60,
+            "y": 20,
+            "width": 25,
+            "height": 50
+          }
+        },
+        {
+          "class": "Damaged Vehicle",
+          "label": "Vehicle Collision (91%)",
+          "confidence": 0.91,
+          "box": {
+            "x": 15,
+            "y": 10,
+            "width": 45,
+            "height": 40
+          }
+        }
+      ],
+      "objects_summary": "3 People, 2 Vehicles, No Active Fire, Road Obstruction"
+    },
+    "detailed_analysis": {
+      "primary_incident_category": "Mass Casualty & Disaster Incidents",
+      "secondary_categories": [
+        "Road accident"
+      ],
+      "confidence_score": 0.89,
+      "confidence_level": "HIGH",
+      "severity_level": "MODERATE",
+      "severity_score": 45,
+      "estimated_patient_count": 3,
+      "patient_count_confidence": "HIGH",
+      "consciousness_status": "Unknown",
+      "consciousness_evidence": "No definitive consciousness state specified in emergency input",
+      "breathing_status": "Unknown",
+      "breathing_evidence": "No explicit respiratory failure reported",
+      "active_hemorrhage_observed": null,
+      "hemorrhage_evidence": "No visible hemorrhage explicitly reported",
+      "suspected_physical_trauma": false,
+      "trauma_evidence": "No high-energy mechanical impact identified",
+      "visual_scene_descriptors": [
+        "No image telemetry attached"
+      ],
+      "voice_audio_descriptors": [
+        "No audio recording submitted"
+      ],
+      "key_text_extracts": [
+        "Visual Indicator: Possible person lying on roadway. Visual Indicator: Limb deformity indicator. Visual Indicator: Structural frontal vehicle deformation. Visual Indicator: Shattered windshield"
+      ],
+      "red_flags_detected": [
+        "Hazardous material release or structural instability at scene"
+      ],
+      "triage_priority_score": 3,
+      "recommended_medical_specialties": [
+        "Trauma Care",
+        "Emergency Department",
+        "Blood Bank",
+        "Disaster Management",
+        "ICU"
+      ],
+      "required_hospital_capabilities": [
+        "Trauma Care",
+        "Emergency Department",
+        "Blood Bank",
+        "Disaster Management",
+        "ICU"
+      ],
+      "immediate_first_aid_steps": [
+        "Perform START triage (Simple Triage and Rapid Treatment)",
+        "Prioritize immediate airway opening and arterial hemorrhage control",
+        "Establish incident command post and safe zone"
+      ],
+      "dispatch_recommendations": "Trigger Disaster Mass Casualty Incident (MCI) Protocol; dispatch multiple ALS units.",
+      "key_uncertainties": [
+        "Exact number of injured people on scene",
+        "Presence of internal hemorrhage or closed organ trauma",
+        "Patient consciousness state unverified",
+        "Airway patency and oxygenation status unverified"
+      ],
+      "missing_critical_data": [
+        "On-scene vitals (Blood pressure, Pulse, SpO2)",
+        "AVPU / Glasgow Coma Scale (GCS) assessment score",
+        "Respiratory rate and SpO2 oxygen saturation percentage"
+      ],
+      "recommended_clarifying_questions": [
+        "Is the patient breathing without obstruction?",
+        "Are there any signs of head trauma or neck pain?",
+        "Is there active arterial bleeding?"
+      ],
+      "clinical_reasoning_summary": "Incident categorized under Mass Casualty & Disaster Incidents with MODERATE triage priority based on rule matches: [Multiple Victims (3 affected)]. Recommended destination capabilities: Trauma Care, Emergency Department, Blood Bank, Disaster Management, ICU.",
+      "evidence_provenance": [
+        {
+          "source": "TEXT",
+          "detail": "User typed report: \"Visual Indicator: Possible person lying on roadway...\""
+        },
+        {
+          "source": "GPS",
+          "detail": "Browser GPS coordinates: 19.70634878484505, 72.78221686006381"
+        }
+      ],
+      "non_diagnostic_disclaimer": "DISCLAIMER: AI incident analysis provides emergency decision-support telemetry only and does NOT constitute a formal medical diagnosis. Immediate response dispatch should occur independently of automated assessments."
+    },
+    "nearby_hospitals": [],
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-25T17:53:19.265Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI & computer vision analysis completed",
+        "timestamp": "2026-10-25T17:53:19.265Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Nearby hospital query complete",
+        "timestamp": "2026-10-25T17:53:19.265Z"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "id": "rep-001",
+    "report_id": "ER-2026-000101",
+    "created_at": "2026-10-25T08:54:37.893Z",
+    "emergency_type": "Road Accident",
+    "description": "Multi-vehicle collision on highway. Two individuals unconscious and experiencing severe hemorrhage.",
+    "people_affected": 2,
+    "severity": "CRITICAL",
+    "ai_confidence": 96,
+    "status": "ALERT_SENT",
+    "location": {
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "accuracy": 10,
+      "address": "Main Highway Junction, Km 14",
+      "timestamp": "2026-10-25T08:54:37.893Z"
+    },
+    "ai_assessment": {
+      "emergency_type": "Road Accident",
+      "severity": "CRITICAL",
+      "confidence": 96,
+      "reasoning": "Unconscious victims with active severe hemorrhage indicates high risk of hemorrhagic shock and airway compromise.",
+      "required_facilities": [
+        "Trauma Center",
+        "ICU",
+        "Blood Bank",
+        "Emergency Department"
+      ],
+      "recommended_response": "Immediate dispatch of Advanced Life Support (ALS) ambulance and trauma surgery team preparation.",
+      "immediate_safety_actions": [
+        "Do not move unconscious victims unless immediate fire hazard exists.",
+        "Apply direct pressure to bleeding wounds using clean cloth.",
+        "Keep airway clear if vomiting occurs by turning head sideways gently."
+      ]
+    },
+    "recommended_hospital_id": "hosp-001",
+    "recommended_hospital": {
+      "id": "hosp-001",
+      "name": "Apex Trauma & Critical Care Center (DEMO HOSPITAL)",
+      "address": "Sector 14, Main Medical Expressway, Metro City",
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "phone": "+1 (800) 555-0199",
+      "emergency_email": "er-trauma@apexhospital-demo.org",
+      "is_demo": true,
+      "capabilities": {
+        "has_emergency_department": true,
+        "has_icu": true,
+        "has_trauma_center": true,
+        "has_blood_bank": true,
+        "has_cardiology": true,
+        "has_neurology": true,
+        "has_orthopedics": true,
+        "has_burn_unit": true,
+        "has_ambulance": true,
+        "has_operation_theatre": true,
+        "is_emergency_available": true
+      }
+    },
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-25T08:54:37.893Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI analysis completed",
+        "timestamp": "2026-10-25T08:55:37.893Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "Apex Trauma Center matched",
+        "timestamp": "2026-10-25T08:55:37.893Z"
+      },
+      {
+        "status": "REPORT_GENERATED",
+        "label": "PDF Report generated",
+        "timestamp": "2026-10-25T08:56:37.893Z"
+      },
+      {
+        "status": "ALERT_SENT",
+        "label": "Hospital alert dispatched to er-trauma@apexhospital-demo.org",
+        "timestamp": "2026-10-25T08:57:37.893Z"
+      }
+    ],
+    "email_status": {
+      "sent": true,
+      "sent_at": "2026-10-25T08:57:37.893Z",
+      "recipient": "er-trauma@apexhospital-demo.org",
+      "subject": "URGENT EMERGENCY ALERT — CRITICAL — ER-2026-000101"
+    }
+  },
+  {
+    "id": "rep-002",
+    "report_id": "ER-2026-000102",
+    "created_at": "2026-10-25T08:19:37.893Z",
+    "emergency_type": "Chest Pain",
+    "description": "Elderly patient complaining of severe radiating chest pain, cold sweats, and nausea.",
+    "people_affected": 1,
+    "severity": "CRITICAL",
+    "ai_confidence": 94,
+    "status": "ACKNOWLEDGED",
+    "location": {
+      "latitude": 19.062,
+      "longitude": 72.861,
+      "accuracy": 15,
+      "address": "Flat 402, Oakwood Towers",
+      "timestamp": "2026-10-25T08:19:37.893Z"
+    },
+    "ai_assessment": {
+      "emergency_type": "Chest Pain",
+      "severity": "CRITICAL",
+      "confidence": 94,
+      "reasoning": "Radiating chest pain with diaphoresis in elderly patient strongly suggests Acute Coronary Syndrome / Myocardial Infarction.",
+      "required_facilities": [
+        "Cardiology",
+        "ICU",
+        "Emergency Department",
+        "Cath Lab"
+      ],
+      "recommended_response": "Priority cardiac ambulance dispatch and pre-activation of interventional cardiology team.",
+      "immediate_safety_actions": [
+        "Keep patient calm in comfortable sitting position.",
+        "Loosen tight clothing around neck and chest.",
+        "Do not offer food or liquid."
+      ]
+    },
+    "recommended_hospital_id": "hosp-003",
+    "recommended_hospital": {
+      "id": "hosp-003",
+      "name": "St. Jude Heart & Vascular Institute (DEMO HOSPITAL)",
+      "address": "102 Cardiac Way, North Ridge",
+      "latitude": 19.062,
+      "longitude": 72.861,
+      "phone": "+1 (800) 555-0188",
+      "emergency_email": "cardiac-er@stjude-demo.org",
+      "is_demo": true,
+      "capabilities": {
+        "has_emergency_department": true,
+        "has_icu": true,
+        "has_trauma_center": false,
+        "has_blood_bank": true,
+        "has_cardiology": true,
+        "has_neurology": true,
+        "has_orthopedics": false,
+        "has_burn_unit": false,
+        "has_ambulance": true,
+        "has_operation_theatre": true,
+        "is_emergency_available": true
+      }
+    },
+    "timeline": [
+      {
+        "status": "NEW",
+        "label": "Emergency submitted",
+        "timestamp": "2026-10-25T08:19:37.893Z"
+      },
+      {
+        "status": "ANALYZING",
+        "label": "AI analysis completed",
+        "timestamp": "2026-10-25T08:20:37.893Z"
+      },
+      {
+        "status": "HOSPITAL_RECOMMENDED",
+        "label": "St. Jude Heart Institute matched",
+        "timestamp": "2026-10-25T08:20:37.893Z"
+      },
+      {
+        "status": "ALERT_SENT",
+        "label": "Alert email sent",
+        "timestamp": "2026-10-25T08:21:37.893Z"
+      },
+      {
+        "status": "ACKNOWLEDGED",
+        "label": "Hospital staff acknowledged emergency",
+        "timestamp": "2026-10-25T08:29:37.893Z"
+      }
+    ],
+    "email_status": {
+      "sent": true,
+      "sent_at": "2026-10-25T08:21:37.893Z",
+      "recipient": "cardiac-er@stjude-demo.org",
+      "subject": "URGENT EMERGENCY ALERT — CRITICAL — ER-2026-000102"
+    }
+  }
+]

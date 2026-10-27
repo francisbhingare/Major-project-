@@ -1,0 +1,155 @@
+[
+  {
+    "id": "log-1793007374299-zney",
+    "sent_at": "2026-10-26T09:36:14.299Z",
+    "emergency_id": "rep-1793007365658-etky",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [LOW] — ER-2026-919747",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792997786855-uoii",
+    "sent_at": "2026-10-26T06:56:26.855Z",
+    "emergency_id": "rep-1792997766553-61e2",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [HIGH] — ER-2026-463779",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792997724389-jrdj",
+    "sent_at": "2026-10-26T06:55:24.389Z",
+    "emergency_id": "rep-1792997723300-xepv",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [HIGH] — ER-2026-816545",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792996770239-7lzb",
+    "sent_at": "2026-10-26T06:39:30.239Z",
+    "emergency_id": "rep-1792996748833-6814",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [LOW] — ER-2026-109699",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792996143083-bty8",
+    "sent_at": "2026-10-26T06:29:03.083Z",
+    "emergency_id": "rep-1792996122797-7tja",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [HIGH] — ER-2026-660875",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792996054816-wlb2",
+    "sent_at": "2026-10-26T06:27:34.816Z",
+    "emergency_id": "rep-1792996034525-vh8z",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [HIGH] — ER-2026-368994",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792994643300-nzv9",
+    "sent_at": "2026-10-26T06:04:03.300Z",
+    "emergency_id": "rep-1792994634155-la0w",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [LOW] — ER-2026-577461",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792994321884-hwy3",
+    "sent_at": "2026-10-26T05:58:41.884Z",
+    "emergency_id": "rep-1792994318374-fvt4",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [CRITICAL] — ER-2026-467016",
+    "status": "FAILED",
+    "error": "Cannot read properties of undefined (reading 'join')"
+  },
+  {
+    "id": "log-1792994107973-ijkt",
+    "sent_at": "2026-10-26T05:55:07.973Z",
+    "emergency_id": "rep-1792994088483-2vzb",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [CRITICAL] — ER-2026-759242",
+    "status": "FAILED",
+    "error": "Cannot read properties of undefined (reading 'join')"
+  },
+  {
+    "id": "log-1792952240734-m89t",
+    "sent_at": "2026-10-25T18:17:20.734Z",
+    "emergency_id": "rep-1792952194014-9qzu",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [CRITICAL] — ER-2026-870235",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792952055212-0nry",
+    "sent_at": "2026-10-25T18:14:15.212Z",
+    "emergency_id": "rep-1792952008283-gh0b",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [LOW] — ER-2026-762777",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792951933790-32ej",
+    "sent_at": "2026-10-25T18:12:13.790Z",
+    "emergency_id": "rep-1792951890144-t8v2",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [CRITICAL] — ER-2026-121356",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792950892467-fppq",
+    "sent_at": "2026-10-25T17:54:52.467Z",
+    "emergency_id": "rep-1792950846753-y335",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [MODERATE] — ER-2026-536316",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792950892301-mpdf",
+    "sent_at": "2026-10-25T17:54:52.301Z",
+    "emergency_id": "rep-1792950845756-dee1",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [MODERATE] — ER-2026-138092",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792950891842-2sbi",
+    "sent_at": "2026-10-25T17:54:51.842Z",
+    "emergency_id": "rep-1792950847750-h7tb",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [MODERATE] — ER-2026-106311",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792950891836-l5u6",
+    "sent_at": "2026-10-25T17:54:51.836Z",
+    "emergency_id": "rep-1792950845394-305t",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [MODERATE] — ER-2026-184020",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  },
+  {
+    "id": "log-1792950818024-zv9d",
+    "sent_at": "2026-10-25T17:53:38.024Z",
+    "emergency_id": "rep-1792950799265-iam4",
+    "recipient": "er-trauma@apexhospital-demo.org",
+    "subject": "URGENT EMERGENCY ALERT — [MODERATE] — ER-2026-940387",
+    "status": "FAILED",
+    "error": "{\"message\":\"API key is invalid\",\"name\":\"validation_error\",\"statusCode\":401}"
+  }
+]

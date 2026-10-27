@@ -1,0 +1,117 @@
+[
+  {
+    "id": "hosp-001",
+    "name": "Apex Trauma & Critical Care Center (DEMO HOSPITAL)",
+    "address": "Sector 14, Main Medical Expressway, Metro City",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "phone": "+1 (800) 555-0199",
+    "emergency_email": "er-trauma@apexhospital-demo.org",
+    "is_demo": true,
+    "capabilities": {
+      "has_emergency_department": true,
+      "has_icu": true,
+      "has_trauma_center": true,
+      "has_blood_bank": true,
+      "has_cardiology": true,
+      "has_neurology": true,
+      "has_orthopedics": true,
+      "has_burn_unit": true,
+      "has_ambulance": true,
+      "has_operation_theatre": true,
+      "is_emergency_available": true
+    }
+  },
+  {
+    "id": "hosp-002",
+    "name": "CityCare General Hospital (DEMO HOSPITAL)",
+    "address": "45 Health Avenue, Central District",
+    "latitude": 19.088,
+    "longitude": 72.889,
+    "phone": "+1 (800) 555-0144",
+    "emergency_email": "emergency@citycare-demo.org",
+    "is_demo": true,
+    "capabilities": {
+      "has_emergency_department": true,
+      "has_icu": true,
+      "has_trauma_center": false,
+      "has_blood_bank": true,
+      "has_cardiology": true,
+      "has_neurology": false,
+      "has_orthopedics": true,
+      "has_burn_unit": false,
+      "has_ambulance": true,
+      "has_operation_theatre": true,
+      "is_emergency_available": true
+    }
+  },
+  {
+    "id": "hosp-003",
+    "name": "St. Jude Heart & Vascular Institute (DEMO HOSPITAL)",
+    "address": "102 Cardiac Way, North Ridge",
+    "latitude": 19.062,
+    "longitude": 72.861,
+    "phone": "+1 (800) 555-0188",
+    "emergency_email": "cardiac-er@stjude-demo.org",
+    "is_demo": true,
+    "capabilities": {
+      "has_emergency_department": true,
+      "has_icu": true,
+      "has_trauma_center": false,
+      "has_blood_bank": true,
+      "has_cardiology": true,
+      "has_neurology": true,
+      "has_orthopedics": false,
+      "has_burn_unit": false,
+      "has_ambulance": true,
+      "has_operation_theatre": true,
+      "is_emergency_available": true
+    }
+  },
+  {
+    "id": "hosp-004",
+    "name": "Metro Burn & Specialized Injury Clinic (DEMO HOSPITAL)",
+    "address": "88 Recovery Boulevard, East Side",
+    "latitude": 19.095,
+    "longitude": 72.85,
+    "phone": "+1 (800) 555-0177",
+    "emergency_email": "burnunit@metrocare-demo.org",
+    "is_demo": true,
+    "capabilities": {
+      "has_emergency_department": true,
+      "has_icu": true,
+      "has_trauma_center": false,
+      "has_blood_bank": true,
+      "has_cardiology": false,
+      "has_neurology": false,
+      "has_orthopedics": false,
+      "has_burn_unit": true,
+      "has_ambulance": true,
+      "has_operation_theatre": true,
+      "is_emergency_available": true
+    }
+  },
+  {
+    "id": "hosp-005",
+    "name": "GreenValley Community Hospital (DEMO HOSPITAL)",
+    "address": "12 Suburban Road, West Suburbs",
+    "latitude": 19.04,
+    "longitude": 72.9,
+    "phone": "+1 (800) 555-0122",
+    "emergency_email": "er@greenvalley-demo.org",
+    "is_demo": true,
+    "capabilities": {
+      "has_emergency_department": true,
+      "has_icu": false,
+      "has_trauma_center": false,
+      "has_blood_bank": false,
+      "has_cardiology": false,
+      "has_neurology": false,
+      "has_orthopedics": true,
+      "has_burn_unit": false,
+      "has_ambulance": true,
+      "has_operation_theatre": false,
+      "is_emergency_available": true
+    }
+  }
+]
