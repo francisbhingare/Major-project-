@@ -8,7 +8,7 @@ interface HospitalCardProps {
 }
 
 export function HospitalCard({ hospital, isRecommended = false }: HospitalCardProps) {
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${hospital.latitude},${hospital.longitude}`;
+  const googleMapsUrl = hospital.google_maps_uri || `https://www.google.com/maps/dir/?api=1&destination=${hospital.latitude},${hospital.longitude}`;
 
   return (
     <div

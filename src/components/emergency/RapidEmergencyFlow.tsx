@@ -23,18 +23,15 @@ import {
   Navigation,
   Download,
   Layers,
-  ChevronDown,
-  ChevronUp,
   Heart,
   Flame,
   Car,
-  Clock,
-  ArrowRight,
-  Send,
   Zap,
   Activity,
-  User,
-  Users
+  Users,
+  ExternalLink,
+  Award,
+  Globe
 } from 'lucide-react';
 
 const EMERGENCY_TYPES = [
@@ -74,7 +71,16 @@ const PRESETS = [
 ];
 
 export function RapidEmergencyFlow() {
-  const { location, loading: geoLoading, error: geoError, captureLocation, getRealLocation, setManualLocation, setDemoLocation } = useGeolocation({ autoCapture: true });
+  const {
+    location,
+    loading: geoLoading,
+    error: geoError,
+    isGeocoding,
+    captureLocation,
+    getRealLocation,
+    setManualLocation,
+    geocodeAndSetLocation,
+  } = useGeolocation({ autoCapture: true });
 
   // Input states
   const [selectedType, setSelectedType] = useState<string>('Road Accident');
@@ -102,6 +108,7 @@ export function RapidEmergencyFlow() {
   const [showDiagram, setShowDiagram] = useState(false);
   const [isEditingGps, setIsEditingGps] = useState(false);
   const [manualAddress, setManualAddress] = useState('');
+  const [manualAddressError, setManualAddressError] = useState<string | null>(null);
 
   // Auto-sync offline queued emergencies when coming online
   useEffect(() => {
@@ -133,6 +140,21 @@ export function RapidEmergencyFlow() {
     }
   };
 
+  const handleSetManualLocation = async () => {
+    if (!manualAddress.trim()) {
+      setManualAddressError('Please enter an address, landmark, or city name.');
+      return;
+    }
+    setManualAddressError(null);
+    try {
+      await geocodeAndSetLocation(manualAddress);
+      setIsEditingGps(false);
+      setFlowError(null);
+    } catch (err: any) {
+      setManualAddressError(err.message || 'Could not locate address. Please try another nearby location.');
+    }
+  };
+
   const handleSubmitEmergency = async () => {
     const combinedDescription = [textInput, voiceText].filter(Boolean).join('. ').trim();
 
@@ -144,15 +166,17 @@ export function RapidEmergencyFlow() {
     setIsSubmitting(true);
     setFlowError(null);
 
+    let activeLocation = location;
+
     try {
-      // 1. Resolve Location (prefer live GPS or user's manual pin, NEVER silently fake GPS)
-      let activeLocation = location;
+      // 1. Resolve Location (prefer live GPS or manual address, NEVER silently fake GPS)
       if (!activeLocation) {
         try {
           activeLocation = await getRealLocation();
         } catch {
           setIsSubmitting(false);
-          setFlowError('Location Telemetry Required: We could not acquire browser GPS coordinates. Please grant location permissions, enter a manual address below, or choose Demo Location.');
+          setIsEditingGps(true);
+          setFlowError('Location Telemetry Required: We could not acquire browser GPS coordinates. Please grant location permissions or type your city/address in the manual location box below.');
           return;
         }
       }
@@ -179,7 +203,7 @@ export function RapidEmergencyFlow() {
       const assessment: AIAssessment = aiData.assessment;
       setAiAssessment(assessment);
 
-      // 3. Hospital Match (Live GIS Query)
+      // 3. Hospital Match (Live GIS Query with 5km -> 10km -> 20km auto-expansion)
       const isDemoLoc = Boolean(activeLocation.is_demo) || activeLocation.source === 'DEMO';
       const matchRes = await fetch('/api/hospitals/recommend', {
         method: 'POST',
@@ -190,7 +214,7 @@ export function RapidEmergencyFlow() {
           emergency_type: assessment.emergency_type,
           severity: assessment.severity,
           required_facilities: assessment.required_facilities,
-          radius_km: 10,
+          radius_km: 5, // Starts at 5km, expands to 10km and 20km if needed
           source: activeLocation.source,
           is_demo: isDemoLoc,
         }),
@@ -233,15 +257,10 @@ export function RapidEmergencyFlow() {
     } catch (err: any) {
       console.warn('[Rapid Flow] Network issue or backend dispatch error. Queuing offline:', err);
       try {
-        const fallbackLoc = location || {
-          latitude: 19.0760,
-          longitude: 72.8777,
-          accuracy: 25,
-          quality: 'MEDIUM',
-          source: 'DEVICE_GPS',
-          address: 'Local Device GPS Coordinates',
-          timestamp: new Date().toISOString(),
-        };
+        if (!activeLocation) {
+          setFlowError('Cannot record emergency report without location telemetry. Please enter location manually.');
+          return;
+        }
 
         const offlineReport: EmergencyReport = {
           id: `offline-${Date.now()}`,
@@ -252,7 +271,7 @@ export function RapidEmergencyFlow() {
           severity: aiAssessment?.severity || 'HIGH',
           priority: 2,
           status: 'PENDING_SYNC',
-          location: fallbackLoc,
+          location: activeLocation,
           created_at: new Date().toISOString(),
           ai_assessment: aiAssessment || undefined,
           accident_detection: activeAccidentDetection || undefined,
@@ -273,10 +292,12 @@ export function RapidEmergencyFlow() {
     setCreatedReport(null);
     setAiAssessment(null);
     setRecommendedHospital(undefined);
+    setAllHospitals([]);
     setTextInput('');
     setVoiceText('');
     setActiveAccidentDetection(null);
     setFlowError(null);
+    setIsEditingGps(false);
   };
 
   return (
@@ -287,7 +308,7 @@ export function RapidEmergencyFlow() {
       {!createdReport ? (
         <div className="space-y-6">
           {/* Header Card */}
-          <div className="bg-gradient-to-r from-red-950/80 via-slate-900 to-slate-950 border border-red-500/30 rounded-3xl p-6 sm:p-8 space-y-3 shadow-2xl">
+          <div className="bg-gradient-to-r from-red-950/80 via-slate-900 to-slate-950 border border-red-500/30 rounded-3xl p-6 sm:p-8 space-y-4 shadow-2xl">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-2xl bg-red-600/20 border-2 border-red-500/60 text-red-400 flex items-center justify-center shadow-lg shadow-red-950">
@@ -301,28 +322,36 @@ export function RapidEmergencyFlow() {
                     </span>
                   </h1>
                   <p className="text-xs text-slate-300">
-                    Quick 1-tap reporting. GPS, AI severity triage, and hospital dispatch execute in seconds.
+                    Quick 1-tap reporting. GPS, AI severity triage, and nearby hospital dispatch in seconds.
                   </p>
                 </div>
               </div>
 
-              {/* Automatic GPS Pill */}
+              {/* Automatic GPS Pill with Manual Edit Button */}
               <div className="bg-slate-950/80 border border-slate-800 rounded-2xl px-3.5 py-2 flex items-center gap-2 text-xs">
                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
                 <div>
                   <div className="font-bold text-white text-[11px] flex items-center gap-1.5">
-                    <span>{location ? 'GPS Locked' : 'Detecting GPS...'}</span>
+                    <span>{location ? (location.source === 'MANUAL' ? 'Manual Location' : 'GPS Locked') : 'Locating...'}</span>
                     <span className={`w-2 h-2 rounded-full ${location ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
                   </div>
-                  <span className="text-[10px] text-slate-400 block font-mono">
-                    {location ? `${location.latitude.toFixed(4)}, ${location.longitude.toFixed(4)}` : 'Auto-locating'}
+                  <span className="text-[10px] text-slate-400 block font-mono max-w-[120px] truncate" title={location?.address}>
+                    {location ? `${location.latitude.toFixed(4)}, ${location.longitude.toFixed(4)}` : 'Auto-detecting'}
                   </span>
                 </div>
                 <button
                   type="button"
+                  onClick={() => setIsEditingGps((prev) => !prev)}
+                  className="ml-1 px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 text-[10px] font-bold transition"
+                  title="Enter address or coordinates manually"
+                >
+                  Edit
+                </button>
+                <button
+                  type="button"
                   onClick={captureLocation}
                   disabled={geoLoading}
-                  className="ml-1 p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition"
+                  className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition"
                   title="Refresh GPS"
                 >
                   <RefreshCw className={`w-3 h-3 ${geoLoading ? 'animate-spin' : ''}`} />
@@ -348,6 +377,86 @@ export function RapidEmergencyFlow() {
               ))}
             </div>
           </div>
+
+          {/* MANUAL LOCATION ENTRY / GPS ERROR RESOLVER */}
+          {(!location || isEditingGps || geoError) && (
+            <div className="bg-slate-900/95 border-2 border-amber-500/50 rounded-3xl p-5 space-y-3 shadow-xl">
+              <div className="flex items-center justify-between text-xs">
+                <div className="flex items-center gap-2 text-amber-400 font-extrabold uppercase tracking-wide">
+                  <MapPin className="w-4 h-4 text-amber-400" />
+                  <span>{location ? 'Adjust Incident Location' : 'Location Required for Hospital Dispatch'}</span>
+                </div>
+                {location && (
+                  <button
+                    type="button"
+                    onClick={() => setIsEditingGps(false)}
+                    className="text-[11px] text-slate-400 hover:text-white"
+                  >
+                    Close
+                  </button>
+                )}
+              </div>
+
+              {geoError && !location && (
+                <p className="text-xs text-amber-300 bg-amber-950/60 p-3 rounded-2xl border border-amber-500/30 leading-relaxed">
+                  ⚠️ {geoError}
+                </p>
+              )}
+
+              <p className="text-xs text-slate-300">
+                Type your area, city, street, landmark, or raw coordinates (e.g. <em>&quot;FC Road, Pune&quot;</em> or <em>&quot;Andheri, Mumbai&quot;</em> or <em>&quot;18.5204, 73.8567&quot;</em>):
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-2">
+                <input
+                  type="text"
+                  value={manualAddress}
+                  onChange={(e) => setManualAddress(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                      handleSetManualLocation();
+                    }
+                  }}
+                  placeholder="Enter location name or landmark..."
+                  className="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                />
+                <button
+                  type="button"
+                  disabled={isGeocoding || !manualAddress.trim()}
+                  onClick={handleSetManualLocation}
+                  className="bg-amber-600 hover:bg-amber-500 disabled:opacity-50 text-slate-950 font-black text-xs px-5 py-3 rounded-xl flex items-center justify-center gap-2 transition shadow"
+                >
+                  {isGeocoding ? <RefreshCw className="w-4 h-4 animate-spin" /> : <MapPin className="w-4 h-4" />}
+                  <span>{isGeocoding ? 'Locating...' : 'Set Location'}</span>
+                </button>
+                <button
+                  type="button"
+                  disabled={geoLoading}
+                  onClick={captureLocation}
+                  className="bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs px-4 py-3 rounded-xl flex items-center justify-center gap-1.5 transition border border-slate-700"
+                >
+                  <RefreshCw className={`w-3.5 h-3.5 ${geoLoading ? 'animate-spin' : ''}`} />
+                  <span>Use Device GPS</span>
+                </button>
+              </div>
+
+              {manualAddressError && (
+                <p className="text-xs text-red-400 font-medium">
+                  {manualAddressError}
+                </p>
+              )}
+
+              {location && (
+                <div className="p-3 bg-emerald-950/40 border border-emerald-500/30 rounded-xl text-xs text-emerald-300 flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
+                  <span>
+                    Location set: <strong>{location.address || `${location.latitude.toFixed(4)}, ${location.longitude.toFixed(4)}`}</strong>
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Form Error Banner */}
           {flowError && (
@@ -452,7 +561,7 @@ export function RapidEmergencyFlow() {
                 {voiceText && (
                   <div className="p-3 bg-slate-950 border border-slate-800 rounded-xl text-xs text-emerald-300">
                     <span className="text-slate-500 block text-[10px] uppercase font-bold">Transcription:</span>
-                    "{voiceText}"
+                    &quot;{voiceText}&quot;
                   </div>
                 )}
               </div>
@@ -519,7 +628,7 @@ export function RapidEmergencyFlow() {
             {isSubmitting ? (
               <>
                 <RefreshCw className="w-5 h-5 animate-spin" />
-                <span>Analyzing Telemetry & Dispatching...</span>
+                <span>Searching Real Nearby Hospitals & Dispatching...</span>
               </>
             ) : (
               <>
@@ -572,43 +681,66 @@ export function RapidEmergencyFlow() {
             </div>
           </div>
 
-          {/* MATCHED HOSPITAL CARD (PRIMARY FOCUS FOR CITIZEN/VICTIM) */}
+          {/* PRIMARY RECOMMENDED HOSPITAL CARD */}
           {recommendedHospital ? (
             <div className="bg-slate-900 border-2 border-blue-500/50 rounded-3xl p-6 space-y-4 shadow-2xl">
               <div className="flex flex-wrap items-center justify-between border-b border-slate-800 pb-3 gap-2">
                 <div className="flex items-center gap-2 text-blue-400 font-extrabold text-xs uppercase tracking-wider">
                   <Activity className="w-4 h-4 text-blue-400" />
-                  <span>Nearest Matched Healthcare Facility</span>
+                  <span>Primary Recommended Healthcare Facility</span>
                 </div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase ${
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase flex items-center gap-1 ${
                     recommendedHospital.is_demo
                       ? 'bg-purple-950 text-purple-300 border-purple-500/40'
                       : 'bg-emerald-950 text-emerald-300 border-emerald-500/40'
                   }`}>
-                    {recommendedHospital.is_demo ? 'Demo Hospital Profile' : `Live Source: ${recommendedHospital.source === 'GOOGLE_PLACES' ? 'Google Places' : 'OpenStreetMap'}`}
+                    <Globe className="w-3 h-3" />
+                    <span>{recommendedHospital.is_demo ? 'Demo Hospital' : `Live OSM / ${recommendedHospital.source === 'GOOGLE_PLACES' ? 'Google Places' : 'OpenStreetMap'}`}</span>
+                  </span>
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase ${
+                    recommendedHospital.verification_status === 'VERIFIED'
+                      ? 'bg-blue-950 text-blue-300 border-blue-500/40'
+                      : 'bg-slate-800 text-slate-400 border-slate-700'
+                  }`}>
+                    {recommendedHospital.verification_status === 'VERIFIED' ? 'Verified Emergency Dept ✓' : 'Unverified Map Data'}
                   </span>
                   <span className="text-xs font-mono font-bold text-blue-300 bg-blue-950/60 px-2.5 py-0.5 rounded-lg border border-blue-500/40">
-                    {recommendedHospital.distanceKm !== undefined ? `${recommendedHospital.distanceKm} km straight-line distance` : 'Nearby'}
+                    {recommendedHospital.distanceKm !== undefined ? `${recommendedHospital.distanceKm} km (Haversine)` : 'Nearby'}
                   </span>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="space-y-1">
+                <div className="space-y-1.5 flex-1">
                   <h3 className="text-xl font-black text-white">{recommendedHospital.name}</h3>
-                  <p className="text-xs text-slate-400 flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-                    <span>{recommendedHospital.address || 'Address registered on map'}</span>
+                  <p className="text-xs text-slate-400 flex items-start gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>{recommendedHospital.address || 'Address registered on OpenStreetMap'}</span>
                   </p>
+                  {recommendedHospital.phone && (
+                    <p className="text-xs text-emerald-400 flex items-center gap-1.5 font-medium">
+                      <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <a href={`tel:${recommendedHospital.phone}`} className="hover:underline">{recommendedHospital.phone}</a>
+                    </p>
+                  )}
+                  {recommendedHospital.matchReasons && (
+                    <div className="pt-1 flex flex-wrap gap-1.5">
+                      {recommendedHospital.matchReasons.slice(0, 3).map((r, i) => (
+                        <span key={i} className="text-[10px] bg-slate-950 text-slate-300 px-2 py-0.5 rounded border border-slate-800">
+                          {r}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Direct Action Buttons: Call & Maps */}
-                <div className="flex items-center gap-2 w-full sm:w-auto">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
                   {recommendedHospital.phone && (
                     <a
                       href={`tel:${recommendedHospital.phone}`}
-                      className="flex-1 sm:flex-none bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs px-4 py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition"
+                      className="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs px-4 py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition"
                     >
                       <Phone className="w-4 h-4" />
                       <span>Call Hospital ER</span>
@@ -616,13 +748,13 @@ export function RapidEmergencyFlow() {
                   )}
 
                   <a
-                    href={recommendedHospital.google_maps_uri || `https://www.google.com/maps/search/?api=1&query=${recommendedHospital.latitude},${recommendedHospital.longitude}`}
+                    href={recommendedHospital.google_maps_uri || `https://www.google.com/maps/dir/?api=1&destination=${recommendedHospital.latitude},${recommendedHospital.longitude}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 sm:flex-none bg-blue-600 hover:bg-blue-500 text-white font-black text-xs px-4 py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition"
+                    className="bg-blue-600 hover:bg-blue-500 text-white font-black text-xs px-4 py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition"
                   >
                     <Navigation className="w-4 h-4" />
-                    <span>Open in Maps</span>
+                    <span>Open Directions</span>
                   </a>
                 </div>
               </div>
@@ -631,10 +763,10 @@ export function RapidEmergencyFlow() {
             <div className="bg-slate-900 border border-amber-500/40 rounded-3xl p-6 space-y-3 shadow-xl">
               <div className="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider">
                 <AlertTriangle className="w-4 h-4 text-amber-400" />
-                <span>Live Hospital Discovery Status</span>
+                <span>Hospital Discovery Status</span>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
-                No healthcare facilities could be retrieved near your incident coordinates from live map registries (OpenStreetMap / Google Places).
+                No healthcare facilities could be found within the immediate radius of your incident coordinates.
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <button
@@ -643,13 +775,23 @@ export function RapidEmergencyFlow() {
                     if (createdReport.location) {
                       setIsSubmitting(true);
                       try {
-                        const res = await fetch(`/api/hospitals/nearby?lat=${createdReport.location.latitude}&lon=${createdReport.location.longitude}&radius=25`);
+                        const res = await fetch('/api/hospitals/recommend', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({
+                            latitude: createdReport.location.latitude,
+                            longitude: createdReport.location.longitude,
+                            emergency_type: createdReport.emergency_type,
+                            severity: createdReport.severity,
+                            radius_km: 20,
+                          }),
+                        });
                         const data = await res.json();
-                        if (data.success && data.hospitals.length > 0) {
-                          setRecommendedHospital(data.hospitals[0]);
-                          setAllHospitals(data.hospitals);
+                        if (data.success && data.recommended_hospital) {
+                          setRecommendedHospital(data.recommended_hospital);
+                          setAllHospitals(data.nearby_hospitals || []);
                         } else {
-                          setFlowError(data.error || 'Retry complete: 0 hospitals found within 25km.');
+                          setFlowError(data.error || 'Retry complete: No hospitals found within 20km.');
                         }
                       } finally {
                         setIsSubmitting(false);
@@ -659,8 +801,76 @@ export function RapidEmergencyFlow() {
                   className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl flex items-center gap-1.5 transition"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
-                  <span>Retry with Expanded 25km Radius</span>
+                  <span>Expand Search Radius to 20 km</span>
                 </button>
+              </div>
+            </div>
+          )}
+
+          {/* OTHER NEARBY HOSPITALS LIST */}
+          {allHospitals.length > 1 && (
+            <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 space-y-4 shadow-xl">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                  <Activity className="w-4 h-4 text-blue-400" />
+                  <span>Other Nearby Hospitals Found ({allHospitals.length - 1} facilities sorted by distance)</span>
+                </h4>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {allHospitals
+                  .filter((h) => h.id !== recommendedHospital?.id)
+                  .slice(0, 6)
+                  .map((hosp) => (
+                    <div key={hosp.id} className="bg-slate-950 p-4 rounded-2xl border border-slate-800/80 flex flex-col justify-between gap-3">
+                      <div className="space-y-1">
+                        <div className="flex items-center justify-between gap-2">
+                          <h5 className="text-sm font-bold text-white line-clamp-1">{hosp.name}</h5>
+                          <span className="text-xs font-mono font-bold text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded border border-blue-500/30 shrink-0">
+                            {hosp.distanceKm !== undefined ? `${hosp.distanceKm} km` : 'Nearby'}
+                          </span>
+                        </div>
+                        <p className="text-[11px] text-slate-400 line-clamp-2">{hosp.address || 'Address registered on OpenStreetMap'}</p>
+                        <div className="flex items-center gap-2 pt-1">
+                          <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border uppercase ${
+                            hosp.emergency_capability === 'yes' ? 'bg-emerald-950 text-emerald-400 border-emerald-500/30' : 'bg-slate-800 text-slate-400 border-slate-700'
+                          }`}>
+                            {hosp.emergency_capability === 'yes' ? 'Emergency Care ✓' : 'Unverified Cap.'}
+                          </span>
+                          {hosp.phone && (
+                            <span className="text-[10px] text-slate-400 flex items-center gap-1">
+                              <Phone className="w-2.5 h-2.5 text-emerald-400" />
+                              <span>{hosp.phone}</span>
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="pt-2 border-t border-slate-900 flex items-center justify-between gap-2">
+                        {hosp.phone ? (
+                          <a
+                            href={`tel:${hosp.phone}`}
+                            className="text-[11px] font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1"
+                          >
+                            <Phone className="w-3 h-3" />
+                            <span>Call</span>
+                          </a>
+                        ) : (
+                          <span className="text-[10px] text-slate-500">Phone not available</span>
+                        )}
+
+                        <a
+                          href={hosp.google_maps_uri || `https://www.google.com/maps/dir/?api=1&destination=${hosp.latitude},${hosp.longitude}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1"
+                        >
+                          <span>Directions</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                    </div>
+                  ))}
               </div>
             </div>
           )}

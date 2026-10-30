@@ -12,7 +12,7 @@ import { ShieldAlert, MapPin, Users, FileText, Sparkles, RefreshCw, AlertCircle 
 
 export function EmergencyForm() {
   const router = useRouter();
-  const { location, loading: geoLoading, error: geoError, captureLocation } = useGeolocation();
+  const { location, loading: geoLoading, error: geoError, captureLocation, getRealLocation } = useGeolocation();
 
   const [emergencyType, setEmergencyType] = useState<EmergencyType>('Road Accident');
   const [description, setDescription] = useState('');
@@ -80,7 +80,19 @@ export function EmergencyForm() {
       const aiData = await aiRes.json();
       const assessment = aiData.assessment;
 
-      // 2. Submit complete emergency report payload
+      // 2. Resolve genuine location - never use hardcoded coordinates
+      let activeLocation = location;
+      if (!activeLocation) {
+        try {
+          activeLocation = await getRealLocation();
+        } catch {
+          setFormError('Current GPS location is required to dispatch emergency response and locate nearby hospitals. Please enable location permissions.');
+          setIsSubmitting(false);
+          return;
+        }
+      }
+
+      // 3. Submit complete emergency report payload
       const createRes = await fetch('/api/emergency/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -89,13 +101,7 @@ export function EmergencyForm() {
           description: combinedDescription,
           voice_transcription: voiceText,
           people_affected: peopleAffected,
-          location: location || {
-            latitude: 19.0760,
-            longitude: 72.8777,
-            accuracy: 50,
-            address: 'Default GPS Location (Mumbai Metro)',
-            timestamp: new Date().toISOString(),
-          },
+          location: activeLocation,
           ai_assessment: assessment,
         }),
       });

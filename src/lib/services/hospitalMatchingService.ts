@@ -19,6 +19,54 @@ export interface HospitalMatchResult {
   error?: string;
 }
 
+/**
+ * Evaluates patient emergency clinical requirements based on emergency type, severity, and required facilities
+ */
+function evaluateEmergencyRequirements(emergencyType: string, severity: EmergencySeverity, requiredFacilities: string[] = []) {
+  const typeLower = (emergencyType || '').toLowerCase();
+  const reqStr = requiredFacilities.join(' ').toLowerCase();
+
+  const isSevereBleedingOrAccident =
+    typeLower.includes('accident') ||
+    typeLower.includes('bleed') ||
+    typeLower.includes('trauma') ||
+    reqStr.includes('trauma') ||
+    reqStr.includes('blood bank');
+
+  const isHeadInjuryOrUnconscious =
+    typeLower.includes('unconscious') ||
+    typeLower.includes('faint') ||
+    typeLower.includes('head') ||
+    typeLower.includes('coma') ||
+    reqStr.includes('icu') ||
+    reqStr.includes('neurology');
+
+  const isCardiacOrChestPain =
+    typeLower.includes('chest pain') ||
+    typeLower.includes('cardiac') ||
+    typeLower.includes('heart') ||
+    reqStr.includes('cath lab') ||
+    reqStr.includes('cardiology');
+
+  const isFractureOrFall =
+    typeLower.includes('fall') ||
+    typeLower.includes('fracture') ||
+    typeLower.includes('bone') ||
+    typeLower.includes('ortho') ||
+    reqStr.includes('orthopedics') ||
+    reqStr.includes('x-ray');
+
+  const isCritical = severity === 'CRITICAL';
+
+  return {
+    isSevereBleedingOrAccident,
+    isHeadInjuryOrUnconscious,
+    isCardiacOrChestPain,
+    isFractureOrFall,
+    isCritical,
+  };
+}
+
 export async function rankNearbyHospitalsForEmergency(
   userLocation: LocationData,
   emergencyType: string,
@@ -48,7 +96,6 @@ export async function rankNearbyHospitalsForEmergency(
   let sourceUsed: 'GOOGLE_PLACES' | 'OPENSTREETMAP' | 'DEMO_DATA' = 'OPENSTREETMAP';
 
   if (isDemoMode) {
-    // Isolated DEMO Mode: explicitly labeled, never masquerading as live
     sourceUsed = 'DEMO_DATA';
     hospitals = getHospitals().map((h) => ({
       ...h,
@@ -66,21 +113,20 @@ export async function rankNearbyHospitalsForEmergency(
         hospitals = googleResult.hospitals;
         sourceUsed = 'GOOGLE_PLACES';
       } else if (googleResult.error) {
-        console.warn(`[HOSPITAL_MATCH] Google Places failed: ${googleResult.error}. Falling back to OpenStreetMap Overpass.`);
+        console.warn(`[HOSPITAL_MATCH] Google Places failed: ${googleResult.error}. Falling back to OpenStreetMap.`);
       }
     }
 
-    // Fallback to live OpenStreetMap Overpass API
+    // Fallback to live OpenStreetMap (Overpass + Nominatim resilient progressive search)
     if (hospitals.length === 0) {
-      console.log(`[HOSPITAL_MATCH] Querying OpenStreetMap Overpass at [${userLocation.latitude}, ${userLocation.longitude}] r=${radiusKm}km`);
-      const overpassResult = await searchNearbyHospitalsOverpass(userLocation.latitude, userLocation.longitude, radiusKm);
+      console.log(`[HOSPITAL_MATCH] Querying OpenStreetMap at [${userLocation.latitude}, ${userLocation.longitude}] r=${radiusKm}km`);
+      const osmResult = await searchNearbyHospitalsOverpass(userLocation.latitude, userLocation.longitude, radiusKm);
 
-      if (overpassResult.success && overpassResult.hospitals.length > 0) {
-        hospitals = overpassResult.hospitals;
+      if (osmResult.success && osmResult.hospitals.length > 0) {
+        hospitals = osmResult.hospitals;
         sourceUsed = 'OPENSTREETMAP';
       } else {
-        // STRICT REQUIREMENT 4 & 5: NEVER return seeded demo hospitals as genuine live search results!
-        console.warn(`[HOSPITAL_MATCH] Live GIS search returned 0 hospitals or failed: ${overpassResult.error}`);
+        console.warn(`[HOSPITAL_MATCH] Live GIS search returned 0 hospitals or failed: ${osmResult.error}`);
         return {
           success: false,
           rankedHospitals: [],
@@ -90,8 +136,8 @@ export async function rankNearbyHospitalsForEmergency(
           configured: isGooglePlacesConfigured(),
           can_retry: true,
           is_demo_data: false,
-          matchingReason: 'Live hospital search failed: No healthcare facilities were found near these coordinates on live map registries.',
-          error: overpassResult.error || 'Live healthcare discovery failed. Check network or expand search radius.',
+          matchingReason: 'No healthcare facilities found within search radius on live map registries.',
+          error: osmResult.error || `No healthcare facilities found within ${radiusKm} km. Try expanding the search radius.`,
           total_found: 0,
         };
       }
@@ -109,10 +155,12 @@ export async function rankNearbyHospitalsForEmergency(
       can_retry: true,
       is_demo_data: isDemoMode,
       matchingReason: `No healthcare facilities found within ${radiusKm} km radius using live GPS queries.`,
-      error: `No hospitals found within ${radiusKm} km. Try expanding the search radius.`,
+      error: `No hospitals found within ${radiusKm} km. Try expanding the search radius to 10 km or 20 km.`,
       total_found: 0,
     };
   }
+
+  const clinical = evaluateEmergencyRequirements(emergencyType, severity, requiredFacilities);
 
   // Capability & Distance Transparent Scoring Formula
   const scoredHospitals = hospitals.map((hosp) => {
@@ -120,50 +168,77 @@ export async function rankNearbyHospitalsForEmergency(
       ? hosp.distanceKm
       : calculateHaversineDistance(userLocation.latitude, userLocation.longitude, hosp.latitude, hosp.longitude);
 
-    // 1. Straight-Line Distance Score (Max 40 pts)
-    const distanceScore = Math.max(0, Math.round(40 - distanceKm * 3));
+    // 1. Straight-Line Distance Score (Max 45 pts)
+    // Decreases as distance increases; closer hospitals gain highest proximity advantage
+    const distanceScore = Math.max(0, Math.round(45 - distanceKm * 2.5));
 
-    // 2. Capability Match Score (Max 40 pts)
-    let capabilityMatchScore = 0;
-    const isEmergencyDeptAvailable = hosp.emergency_capability === 'yes' || hosp.healthcare_type === 'hospital';
-    if (isEmergencyDeptAvailable) {
-      capabilityMatchScore += 25;
+    // 2. Verified Emergency & Clinical Match Score (Max 40 pts)
+    let clinicalMatchScore = 0;
+    const isEmergencyConfirmed = hosp.emergency_capability === 'yes';
+    const isHospitalType = hosp.healthcare_type === 'hospital';
+
+    if (isEmergencyConfirmed) {
+      clinicalMatchScore += 25; // Verified 24/7 Emergency care
+    } else if (isHospitalType) {
+      clinicalMatchScore += 15; // Full Hospital (likely has acute care)
+    } else {
+      clinicalMatchScore += 5;  // Clinic / Healthcare center
     }
+
+    // Emergency type-specific prioritization
+    if (clinical.isCritical && isEmergencyConfirmed) {
+      clinicalMatchScore += 15; // Critical emergency prioritization
+    } else if (clinical.isSevereBleedingOrAccident && (isEmergencyConfirmed || isHospitalType)) {
+      clinicalMatchScore += 10; // Trauma & surgical capability
+    } else if (clinical.isHeadInjuryOrUnconscious && isHospitalType) {
+      clinicalMatchScore += 10; // Diagnostic / ICU capabilities
+    } else if (clinical.isCardiacOrChestPain && isHospitalType) {
+      clinicalMatchScore += 10; // Cardiac emergency care
+    } else if (clinical.isFractureOrFall && (isHospitalType || isEmergencyConfirmed)) {
+      clinicalMatchScore += 8;  // X-Ray / Orthopedic care
+    }
+
+    // 3. Data Verification Status Score (Max 15 pts)
+    let verificationScore = 0;
     if (hosp.verification_status === 'VERIFIED') {
-      capabilityMatchScore += 15;
+      verificationScore = 15;
+    } else if (hosp.source === 'GOOGLE_PLACES') {
+      verificationScore = 10;
+    } else {
+      verificationScore = 5; // Unverified map data
     }
 
-    // 3. Facility Type Score (Max 20 pts)
-    let typeScore = 10;
-    if (hosp.healthcare_type === 'hospital' || hosp.healthcare_type === 'emergency') {
-      typeScore = 20;
-    } else if (hosp.healthcare_type === 'clinic') {
-      typeScore = 12;
-    }
-
-    const suitabilityScore = Math.min(100, distanceScore + capabilityMatchScore + typeScore);
+    const suitabilityScore = Math.min(100, distanceScore + clinicalMatchScore + verificationScore);
 
     const matchReasons: string[] = [];
     if (hosp.source === 'GOOGLE_PLACES') {
       matchReasons.push(`Google Places Verified Location (${hosp.business_status || 'OPERATIONAL'})`);
     } else if (hosp.source === 'DEMO_DATA') {
       matchReasons.push('Demonstration Hospital Profile (Simulated Benchmark)');
-    } else if (isEmergencyDeptAvailable) {
-      matchReasons.push(`Emergency care indicated (${hosp.healthcare_type || 'hospital'})`);
+    } else if (isEmergencyConfirmed) {
+      matchReasons.push('Verified Emergency Care department available ✓');
     } else {
-      matchReasons.push('Capability details subject to on-scene verification');
+      matchReasons.push('Emergency capabilities unverified in public map data');
     }
 
-    // Explicitly label as straight-line distance
-    matchReasons.push(`${distanceKm} km straight-line distance (as-the-crow-flies)`);
+    if (clinical.isCritical && isEmergencyConfirmed) {
+      matchReasons.push('Prioritized for CRITICAL life-safety emergency');
+    } else if (clinical.isSevereBleedingOrAccident) {
+      matchReasons.push('Evaluated for trauma and acute emergency support');
+    } else if (clinical.isHeadInjuryOrUnconscious) {
+      matchReasons.push('Evaluated for acute diagnostic and emergency care');
+    }
 
-    let recommendationNote = `Matches the detected emergency requirements (${emergencyType}) and is among the closest available facilities (${distanceKm} km straight-line distance).`;
+    matchReasons.push(`${distanceKm} km straight-line distance (Haversine formula)`);
+
+    // Transparent recommendation note
+    let recommendationNote = `Nearest facility matching clinical triage for ${emergencyType} (${distanceKm} km straight-line distance).`;
     if (hosp.source === 'GOOGLE_PLACES') {
-      recommendationNote = `Live Google Places hospital result (${distanceKm} km straight-line). Operational status: ${hosp.business_status || 'OPERATIONAL'}.`;
+      recommendationNote = `Google Places verified hospital result (${distanceKm} km straight-line). Operational: ${hosp.business_status || 'OPERATIONAL'}.`;
     } else if (hosp.source === 'DEMO_DATA') {
-      recommendationNote = `[DEMO FACILITY] Pre-configured benchmark facility (${distanceKm} km straight-line). Used for evaluation only.`;
-    } else if (hosp.emergency_capability !== 'yes' && hosp.verification_status !== 'VERIFIED') {
-      recommendationNote = `Capability information is incomplete on OpenStreetMap. Please confirm emergency readiness with local emergency services (${distanceKm} km straight-line).`;
+      recommendationNote = `[DEMO BENCHMARK] Pre-configured testing profile (${distanceKm} km straight-line).`;
+    } else if (hosp.verification_status === 'UNVERIFIED') {
+      recommendationNote = `Located ${distanceKm} km away. Note: Specific emergency facilities are unverified in map registry; call ahead or confirm with local EMS.`;
     }
 
     return {
@@ -175,12 +250,12 @@ export async function rankNearbyHospitalsForEmergency(
     };
   });
 
-  // Sort descending by total suitability score (best match first)
+  // Sort descending by suitability score (best match first)
   scoredHospitals.sort((a, b) => (b.suitabilityScore || 0) - (a.suitabilityScore || 0));
 
   const recommendedHospital = scoredHospitals[0];
 
-  // 3-Tier Categorization
+  // 3-Tier Categorization for UI Clarity
   const nearbyEmergencyHospitals = scoredHospitals.filter(
     (h) => h.id !== recommendedHospital.id && (h.emergency_capability === 'yes' || h.healthcare_type === 'hospital' || h.source === 'GOOGLE_PLACES')
   );
